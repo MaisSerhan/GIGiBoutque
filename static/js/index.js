@@ -1,0 +1,83 @@
+const nav=document.querySelector(".navbar__menu");
+const ul=document.getElementById("navbar__list");
+let li1=document.querySelector(".main__hero .move ul li:nth-child(1)");
+let li2=document.querySelector(".main__hero .move ul li:nth-child(2)");
+
+const navbar= ()=>{
+  for(let i=1;i<5;i++){
+    let n=`Section ${i}`;
+    let c=`section${i}`;
+    let a =`<a class="menu__link" id="${c}" href="#${c}" ></a>`;
+    let li=document.createElement("li");
+    li.setAttribute('class',`nav__item ${c}`);
+    ul.appendChild(li);
+    let s = document.querySelector(`.${c}`);
+    s.innerHTML=a;
+    };
+    let a =document.querySelector("#section4");
+    a.innerHTML = "الرئيسية";
+    a.setAttribute("href","../../index.html")
+    a =document.querySelector("#section3");
+    a.innerHTML = "منتجاتنا ";    
+    a =document.querySelector("#section2");
+    a.innerHTML = "تعرف علينا ";  
+    a =document.querySelector("#section1");
+    a.innerHTML = "العروض "; 
+    li2.classList.remove("active");
+    li1.classList.add("active"); 
+    
+  };
+  
+  navbar();
+
+const minue=()=>{
+  let button =document.createElement("button");
+  button.setAttribute("class","menu__link");
+  button.setAttribute("id","minue");
+  button.setAttribute("onclick","show()");
+  button.innerHTML=`<img src="https://static.vecteezy.com/system/resources/previews/002/292/406/non_2x/hamburger-menu-line-icon-free-vector.jpg " width="40px" height="40px">`
+  const navbar_menu = document.querySelector(".navbar__menu");
+  navbar_menu.insertAdjacentElement("afterbegin",button);
+}
+
+minue();  let d=0;
+function show(){
+    let mnue=document.querySelector("#navbar__list");
+    console.log(mnue);console.log(d);
+    if(d==0){
+    mnue.style.display= "flex";
+     d=1;}
+
+    else{
+      mnue.style.display= "none";
+      d=0;
+    }
+
+  }
+
+
+
+let img= document.querySelector("#change");
+console.log(img.style.backgroundImage);
+let imges=['../static/photo/image1.png','../static/photo/image2.png'];
+
+let random=0;
+
+console.log(li1);
+setInterval(function(){
+img.style.backgroundImage = `url(${imges[random]})`;
+if(random==1){
+  li2.classList.remove("active");
+  li1.classList.add("active");
+}
+if(random==0){
+  li1.classList.remove("active");
+  li2.classList.add("active");
+
+}
+console.log(random);
+random++; 
+if(random >=2){
+  random=0;
+ }
+},3000);
