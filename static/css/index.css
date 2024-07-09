@@ -29,7 +29,15 @@ body{
 .navbar__list{
     height: 100px;
 }
-
+.navbar__menu ul button{
+    display: none;
+    background-color: rgb(0, 0, 0);
+    width: 50px;
+    border: none;
+    color: white;
+    margin-left: 38px;
+    cursor: pointer;
+}
 
 li{
     cursor: pointer;
@@ -403,10 +411,13 @@ color: #838383;
     .main__hero .move a{
     height: 423px;}}
 @media(max-width:650px) {
+    .navbar__menu ul button{
+        display: block;}
     .navbar__menu ul{
        display: none;
        flex-direction:column-reverse;
-       background-color: white}
+       background-color: white;}
+
        #minue {
         display: block;
         margin: 18px 41%;
@@ -445,6 +456,8 @@ color: #838383;
     }        
     }
 @media(max-width:530px){
+    .page__header .connect {
+        height: auto;}
     .product {
         display: flex;
         flex-direction: column;
@@ -457,7 +470,7 @@ color: #838383;
     justify-content: space-between;
 }
 .whats {
-    left: 83%;
+    left: 88%;
 }
 #minue {
     margin: 19px 31px;
@@ -478,7 +491,11 @@ color: #838383;
     width: 238px;
     height: 100%;
 }}
-
+@media (max-width: 400px) {
+    .whats {
+        left: 81%;
+    }
+}
 @media(max-width:330px){
     .main__hero .move a {
         height: 309px;
@@ -491,11 +508,20 @@ color: #838383;
         margin: 0 0 0 -42px;
     }
     .main__hero {
-        margin: 122px -1px;
+        margin: 122px 4px 0 6px;
     }
     .about ul div {
         margin: 18px 12%;}
-    .page__header .connect {
-        height: 35px;
+    #minue {
+        margin: 19px 0px;
+    }
+    .navbar__menu ul {
+        margin: 0 0 0 -134px;
+        align-items: center;
 }
+.navbar__menu ul button {
+    margin-left: 0;}
+    .whats {
+        left: 83%;
+    }
 }

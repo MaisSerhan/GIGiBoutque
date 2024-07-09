@@ -4,7 +4,11 @@ let li1=document.querySelector(".main__hero .move ul li:nth-child(1)");
 let li2=document.querySelector(".main__hero .move ul li:nth-child(2)");
 
 const navbar= ()=>{
-  for(let i=1;i<5;i++){
+  let close=document.createElement("button");
+    close.innerHTML="X";
+    close.setAttribute("onclick","show()");
+    ul.appendChild(close);
+    for(let i=1;i<5;i++){
     let n=`Section ${i}`;
     let c=`section${i}`;
     let a =`<a class="menu__link" id="${c}" href="#${c}" ></a>`;
@@ -55,7 +59,7 @@ function show(){
 
   }
 
-
+ 
 
 let img= document.querySelector("#change");
 console.log(img.style.backgroundImage);
