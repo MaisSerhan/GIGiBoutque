@@ -128,8 +128,6 @@ header{
 }
 body.showCart .cartTab{
     right: 0;
-    height: 100%;
-    width: 100%;
 }
 body.showCart .container{
     transform: translateX(-250px);
