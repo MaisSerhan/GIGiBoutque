@@ -121,8 +121,6 @@ header{
     position: fixed;
     top: 0;
     right: -400px;
-    height: 100%;
-    width: 100%;
     bottom: 0;
     display: grid;
     grid-template-rows: 70px 1fr 70px;
@@ -130,6 +128,8 @@ header{
 }
 body.showCart .cartTab{
     right: 0;
+    height: 100%;
+    width: 100%;
 }
 body.showCart .container{
     transform: translateX(-250px);
