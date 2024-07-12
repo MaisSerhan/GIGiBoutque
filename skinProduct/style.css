@@ -339,8 +339,8 @@ margin: -111px 19% 0 -60%;
 }
     .navbar__menu #navbar__list2 {
         display:none;
-        margin: -296px -13px 0 -116%;
-        width: 143px;
+        margin: -296px -13px 0 -153px;
+        width: 139%;
         background-color: antiquewhite;
         border: 3px solid;       
     }
