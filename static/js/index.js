@@ -7,6 +7,7 @@ const navbar= ()=>{
   let close=document.createElement("button");
     close.innerHTML="X";
     close.setAttribute("onclick","show()");
+    close.classList.add("off");
     ul.appendChild(close);
     for(let i=1;i<5;i++){
     let n=`Section ${i}`;
@@ -22,7 +23,8 @@ const navbar= ()=>{
     a.innerHTML = "الرئيسية";
     a.setAttribute("href","//gigi-boutque.vercel.app/")
     a =document.querySelector("#section3");
-    a.innerHTML = "منتجاتنا ";    
+    a.innerHTML = `منتجاتنا `;  
+    a.setAttribute("href","../../skinProduct/index2.html")
     a =document.querySelector("#section2");
     a.innerHTML = "تعرف علينا ";  
     a =document.querySelector("#section1");
@@ -38,15 +40,15 @@ const minue=()=>{
   let button =document.createElement("button");
   button.setAttribute("class","menu__link");
   button.setAttribute("id","minue");
-  button.setAttribute("onclick","show()");
+  button.setAttribute("onclick", `show("#navbar__list")`);
   button.innerHTML=`<img src="https://static.vecteezy.com/system/resources/previews/002/292/406/non_2x/hamburger-menu-line-icon-free-vector.jpg " width="40px" height="40px">`
   const navbar_menu = document.querySelector(".navbar__menu");
   navbar_menu.insertAdjacentElement("afterbegin",button);
 }
 
 minue();  let d=0;
-function show(){
-    let mnue=document.querySelector("#navbar__list");
+function show(str){
+    let mnue=document.querySelector(str);
     console.log(mnue);console.log(d);
     if(d==0){
     mnue.style.display= "flex";
@@ -58,8 +60,6 @@ function show(){
     }
 
   }
-
- 
 
 let img= document.querySelector("#change");
 console.log(img.style.backgroundImage);
