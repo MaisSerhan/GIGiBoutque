@@ -6,6 +6,37 @@ let body = document.querySelector('body');
 let closeCart = document.querySelector('.close');
 let products = [];
 let cart = [];
+const nav=document.querySelector(".navbar__menu");
+const ul=document.getElementById("navbar__list");
+
+const navbar= ()=>{
+  let close=document.createElement("button");
+    close.innerHTML="X";
+    close.setAttribute("onclick","show()");
+    ul.appendChild(close);
+    for(let i=1;i<5;i++){
+    let n=`Section ${i}`;
+    let c=`section${i}`;
+    let a =`<a class="menu__link" id="${c}" href="#${c}" ></a>`;
+    let li=document.createElement("li");
+    li.setAttribute('class',`nav__item ${c}`);
+    ul.appendChild(li);
+    let s = document.querySelector(`.${c}`);
+    s.innerHTML=a;
+    };
+    let a =document.querySelector("#section4");
+    a.innerHTML = "الرئيسية";
+    a.setAttribute("href","//gigi-boutque.vercel.app/")
+    a =document.querySelector("#section3");
+    a.innerHTML = "منتجاتنا ";    
+    a =document.querySelector("#section2");
+    a.innerHTML = "تعرف علينا ";  
+    a =document.querySelector("#section1");
+    a.innerHTML = "العروض "; 
+    
+  };
+  
+  navbar();
 
 
 iconCart.addEventListener('click', () => {

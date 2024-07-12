@@ -1,6 +1,8 @@
+@import "../static/css/index.css";
 body{
     margin: 0;
     font-family: Poppins;
+    height: 1397px;
 }
 .container{
     width: 900px;
@@ -10,10 +12,19 @@ body{
     padding-top: 10px;
     transition: transform .5s;
 }
+.page__header {
+    left: 0px;
+    padding: 0;
+}
+.logo {
+    margin: 0px;
+    width: 150px;
+    height: 120px;
+}
 a{
     text-decoration: none;
 }
-a:hover{
+.listProduct a:hover{
     box-shadow: #b69292 0px 0px 15px 7px;
 }
 svg{
@@ -26,6 +37,7 @@ header{
     padding: 20px 0;
 }
 .icon-cart{
+    margin-right: 5%;
     position: relative;
 }
 .icon-cart span{
@@ -48,7 +60,8 @@ header{
     width: 90%;
     filter: drop-shadow(0 50px 20px #0009);
 }
-.listProduct{
+.listProduct {
+    margin: 171px 0 0 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
@@ -80,7 +93,7 @@ header{
 
 /* cart */
 .cartTab{
-    width: 400px;
+    width: auto;
     background-color: #353432;
     color: #eee;
     position: fixed;
@@ -155,6 +168,9 @@ body.showCart .container{
 }
 .listCart::-webkit-scrollbar{
     width: 0;
+}
+footer {
+    margin-top: 50px;
 }
 @media only screen and (max-width: 992px) {
     .listProduct{
