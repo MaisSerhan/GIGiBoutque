@@ -337,19 +337,21 @@ margin: 0px -42px 0 -39%;}
 .navbar__menu {
 margin: -111px 19% 0 -60%;
 }
-.navbar__menu #navbar__list2 {
-    display: none;
-    position: relative;
-    left: -118%;
-    top: -296px;
-    width: 137%;
-    background-color: antiquewhite;
-    border: 3px solid;
-}
+    .navbar__menu #navbar__list2 {
+        position: relative;
+        display: flex;
+        position: absolute;
+        left: 229px;
+        top: 107px;
+        width: 143px;
+        background-color: antiquewhite;
+        border: 3px solid;       
+    }
 .navbar__menu #navbar__list  {
     background-color: antiquewhite;
     border: 3px solid;
-    width: 122%;
+    width: 122%;        
+    position: relative;
     margin: 0px -49px 0 -7%;
 }   
 .on{
