@@ -323,8 +323,8 @@ margin: 0px -42px 0 -39%;}
 
 @media only screen and (max-width:650px) {
     .page__header .connect {
-        width: 119px;
-        margin: 36px -46px 28px -31%;
+        margin: -287% -13px 0 -186px;
+        width: 174px;
         padding: 13px 0px;
         z-index: 5;
     }
