@@ -150,18 +150,6 @@ closeCart.addEventListener('click', () => {
                 <h2>${product.name}</h2>
                 <div class="price">$${product.price}</div>
                 <button class="addCart">Add To Cart</button>`;
-                if (product.id=="1"){
-                    newProduct.innerHTML = 
-                    `<img src="${product.image}" alt="">
-                    <h2>${product.name}</h2>
-                    <div class="price">$${product.price}</div>
-                    <div class="contcolor${product.id}">
-                    <button class="color" onclick="color()"></button>
-                    <button class="color"></button>
-                    <div>
-                    <button class="addCart">Add To Cart</button>`;
-                    
-                }
                 listProductHTML.appendChild(newProduct);
             });
         }
