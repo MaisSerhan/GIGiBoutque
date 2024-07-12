@@ -322,17 +322,18 @@ margin: 0px -42px 0 -39%;}
 }
 
 @media only screen and (max-width:650px) {
-.page__header .connect {
-    width: 119px;
-    margin: 0px -46px 99px -31%;
-    padding: 13px 0px;
-}
-.logo {
-    margin: 2px 0 87px -51%;
-}
-.icon-cart {
-margin: -111px -15% 0 -74%
-}
+    .page__header .connect {
+        width: 119px;
+        margin: 36px -46px 28px -31%;
+        padding: 13px 0px;
+        z-index: 5;
+    }
+    .logo {
+        margin: 2px 0 -17px -51%;
+    }
+    .icon-cart {
+        margin: -2px -15% 0 -74%;
+    }
 .navbar__menu {
 margin: -111px 19% 0 -60%;
 }
@@ -354,13 +355,11 @@ margin: -111px 19% 0 -60%;
 .on{
     background-color: antiquewhite;
 }
-.page__header .connect {
-z-index: 5;
-}
 
-#minue {
-    margin: 19px 31px 33px ;
-}
+
+    #minue {
+        margin: 70px 31px 29px;
+    }
 .navbar__menu ul .off {
     display: block;
 }
