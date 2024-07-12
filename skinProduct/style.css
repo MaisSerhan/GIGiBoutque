@@ -323,8 +323,8 @@ margin: 0px -42px 0 -39%;}
 
 @media only screen and (max-width:650px) {
     .page__header .connect {
-        margin: -287% -13px 0 -186px;
-        width: 174px;
+        width: 119px;
+        margin: 36px -46px 28px -31%;
         padding: 13px 0px;
         z-index: 5;
     }
@@ -339,10 +339,10 @@ margin: -111px 19% 0 -60%;
 }
     .navbar__menu #navbar__list2 {
         display:none;
-        margin: -321px -13px 0 -153px;
-        width: 142px;
+        margin: -287%-13px 0 -186px;
+        width: 174px;
         background-color: antiquewhite;
-        border: 3px solid;       
+        border: 3px solid;
     }
 .navbar__menu #navbar__list  {
     background-color: antiquewhite;
