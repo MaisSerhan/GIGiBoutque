@@ -344,13 +344,13 @@ margin: -111px 19% 0 -60%;
         display:none;
         align-content: stretch;
         justify-content: flex-end;
-        margin: -244% -13px 0 -160px;
+        margin: -255% -13px 0 -160px;
         z-index: 6;
         width: 136%;
         background-color: antiquewhite;
         border: 3px solid;
         overflow: scroll;
-        height: 392px;
+        height: 347px;
     }
 .navbar__menu #navbar__list  {
     background-color: antiquewhite;
