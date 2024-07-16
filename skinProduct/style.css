@@ -342,11 +342,13 @@ margin: -111px 19% 0 -60%;
 }
     .navbar__menu #navbar__list2 {
         display:none;
-        margin: -287%-13px 0 -186px;
-        z-index:6;
-        width: 174px;
+        margin: -288% -13px 0 -151px;
+        z-index: 6;
+        width: 140px;
         background-color: antiquewhite;
         border: 3px solid;
+        overflow: scroll;
+        height: 392px;
     }
 .navbar__menu #navbar__list  {
     background-color: antiquewhite;
