@@ -339,7 +339,7 @@ margin: -111px 19% 0 -60%;
 }
     .navbar__menu #navbar__list2 {
         display:none;
-        margin: -296px -13px 0 -186px;
+        margin: -287%-13px 0 -186px;
         width: 174px;
         background-color: antiquewhite;
         border: 3px solid;
@@ -347,9 +347,9 @@ margin: -111px 19% 0 -60%;
 .navbar__menu #navbar__list  {
     background-color: antiquewhite;
     border: 3px solid;
-    width: 122%;        
+    width: 122%;
     position: relative;
-    margin: 0px -49px 0 -7%;
+    margin: -31px -48px 0 -7%;
 }   
 .on{
     background-color: antiquewhite;
@@ -369,7 +369,7 @@ margin: -111px 19% 0 -60%;
 
 @media only screen and (max-width: 350px) {
     .page__header .connect {
-        width: 19%;
+        width: 22%;
         z-index: 5;
         margin: 0px -46px 99px -31%;
         padding: 13px 0px;
@@ -380,8 +380,12 @@ margin: -111px 19% 0 -60%;
     .navbar__menu #navbar__list2 {
     position: relative;
     display: flex;
-    left: -159%;
-    top: -237px;
-    width: 137%;}
+    left: 33%;
+    top: 0px;
+    width: 137%;
+    }
+    #minue {
+        margin: 70px 31px 29px;
+    }
     
 }
