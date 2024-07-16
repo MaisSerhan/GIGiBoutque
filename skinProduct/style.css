@@ -384,8 +384,14 @@ margin: -111px 19% 0 -60%;
     top: 0px;
     width: 137%;
     }
-    #minue {
-        margin: 70px 31px 29px;
+      #minue {
+        margin: 11px 31px 29px;
     }
-    
+
+        .icon-cart {
+        margin: -106px -15% 0 -74%;
+    }
+        .navbar__menu #navbar__list {
+        margin: 11px -29px 0 -7%;
+    }
 }
