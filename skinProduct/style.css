@@ -341,16 +341,16 @@ margin: 0px -42px 0 -39%;}
 margin: -111px 19% 0 -60%;
 }
     .navbar__menu #navbar__list2 {
-        display:none;
+        display: none;
         align-content: stretch;
         justify-content: flex-end;
-        margin: -255% -13px 0 -160px;
+        margin: -252% -13px 0 -160px;
         z-index: 6;
         width: 136%;
         background-color: antiquewhite;
         border: 3px solid;
         overflow: scroll;
-        height: 347px;
+        height: 317px;
     }
 .navbar__menu #navbar__list  {
     background-color: antiquewhite;
