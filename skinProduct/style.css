@@ -322,6 +322,9 @@ margin: 0px -42px 0 -39%;}
 }
 
 @media only screen and (max-width:650px) {
+    .page__header {
+            top: -15px;
+    }
     .page__header .connect {
         width: 119px;
         margin: 36px -46px 28px -31%;
@@ -340,6 +343,7 @@ margin: -111px 19% 0 -60%;
     .navbar__menu #navbar__list2 {
         display:none;
         margin: -287%-13px 0 -186px;
+        z-index:6;
         width: 174px;
         background-color: antiquewhite;
         border: 3px solid;
