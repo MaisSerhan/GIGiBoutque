@@ -25,6 +25,7 @@ const navbar= ()=>{
     a.setAttribute("href","../../skinProduct/index2.html")
     a =document.querySelector("#section2");
     a.innerHTML = "تعرف علينا ";  
+    a.setAttribute("href","");
     a =document.querySelector("#section1");
     a.innerHTML = "العروض "; 
   };
