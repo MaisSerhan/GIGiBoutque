@@ -33,10 +33,9 @@ body{
 .navbar__menu ul .off{
     display: none;
     background-color: rgb(0, 0, 0);
-    width: 50px;
+    width: 100%;
     border: none;
     color: white;
-    margin-left: 38px;
     cursor: pointer;
 }
 
@@ -74,17 +73,11 @@ h1 {
     color: #000;
 }
 
-.navbar__menu .menu__link:hover {
-   /* background: #333;*/
+ .menu__link:hover {
     color: #bf9b30!important;
     transition: ease 0.3s all;
 }
-/*link in nav*/
-/*.navbar__menu .menu__link.active-nav{
-    background-color: #000;
-    color:white;
-    transition: ease 0.3s all;
-    }*/
+
 .page__header {
     background: #fff;
     position: fixed;
@@ -103,8 +96,7 @@ h1 {
 #minue{
     display: none;
 }
-/*#edb6f7
-#c7aa27*/
+
 #section1{
     position: relative;
 }
@@ -236,6 +228,7 @@ position: relative;}
     font-weight: bold;
 }
 
+
 .makeupProduct a::before{
     content: " make up" !important;
 }
@@ -272,7 +265,7 @@ position: relative;}
     height: 21px;
     text-decoration: none;
     position: fixed;
-    top: 689px;
+    top: 90%;
     left: 32px;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
@@ -287,10 +280,9 @@ position: relative;}
     background-color: transparent;
     border-color:transparent;
     left: 95%;  
-    top: 643px;
 }
 .fixed .up, .about{
-    top: 663px;
+    top: 90%;
 }
 
 /*about*/
@@ -355,16 +347,10 @@ background-size: 100% 93%;
 }
 .about ul div a:hover {
     background-size: 171% 150%;
-   /* transform:rotate(10deg);*/
     transition: ease 1s all;
     margin: 19px 0 0 0;
 
 }
-/*.about ul li a:hover img{
-    transform:rotate(40deg);
-    width:100%;
-    transition: ease 0.4s all;
-}*/
 
 /*footr*/
 footer{
@@ -435,9 +421,14 @@ color: #838383;
     .navbar__menu ul button{
         display: block;}
     .navbar__menu ul{
-       display: none;
-       flex-direction:column-reverse;
-       background-color: white;}
+        display: none;
+        flex-direction: column-reverse;
+        background-color: #e7e1d3;
+        height: 294px;
+        width: 125px;
+        justify-content: space-between;
+        align-items: center;
+    }
 
        #minue {
         display: block;
@@ -457,7 +448,10 @@ color: #838383;
         margin: -15px;
     }
     .page__header {
-  align-items: center;}
+     align-items: center;
+    flex-direction: row-reverse;
+    left: -2px;
+    }
     .page__header .connect {
         padding: 2%;
         margin: 13px 0 0 0;
@@ -474,7 +468,11 @@ color: #838383;
         left: 38px;}
     .main__hero .move a {
         height: 309px;
-    }        
+    } 
+    .navbar__menu ul .off{
+        display: block;
+        height: 30px;
+    }       
     }
 @media(max-width:530px){
     .page__header .connect {
@@ -508,7 +506,7 @@ color: #838383;
     top: 568px;
 }
 .about ul div {
-    margin: 19px -16px 0 -55px;
+    margin: 19px 38px 0 -43px;
     width: 238px;
     height: 100%;
 }}
