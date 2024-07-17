@@ -544,3 +544,9 @@ color: #838383;
         left: 83%;
     }
 }
+
+@media (max-width: 330px) {
+.navbar__menu ul {
+    margin: 0 -95px 0 18px;
+}
+}
