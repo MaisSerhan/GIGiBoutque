@@ -8,6 +8,7 @@ const nav=document.querySelector(".navbar__menu");
 let ul=document.getElementById("navbar__list");
 let asul=document.getElementById("aside__list");
 let products = [];
+let prodimage = [];
 let cart = [];
 
 
@@ -194,14 +195,36 @@ closeCart.addEventListener('click', () => {
                 newProduct.classList.add('item');
                 newProduct.setAttribute("href","#2");
                 newProduct.innerHTML = 
-                `<img src="${product.image}" alt="">
+                `<img src="${product.image}" alt="" id="img${product.id}" >
                 <h2>${product.name}</h2>
                 <div class="price">$${product.price}</div>
                 <button class="addCart">Add To Cart</button>`;
                 listProductHTML.appendChild(newProduct);
+                let m=document.getElementById(`img${product.id}`);
+                let src=m.src;
+                newProduct.setAttribute("onclick",`changeImg( "${src}" ,${product.id} )`);
             });
         }
     }
+
+    function changeImg(src,id){
+        let idimg = document.getElementById(`img${id}`);
+        if(idimg==null){
+            idimg = document.getElementById(`p${id}`);  
+        }
+        console.log(idimg.id , products[id-1].image , prodimage[id].image , id);
+        
+        if(idimg.id==`img${id}`){
+        idimg.src = prodimage[id].image; 
+        idimg.id = `p${id}`;}
+        else{
+            idimg.src = products[id-1].image; 
+            idimg.id = `img${id}`;  
+        }
+        console.log(idimg.id , products[id-1].image , prodimage[id].image , id);
+
+    }
+
 
     listProductHTML.addEventListener('click', (event) => {
         let positionClick = event.target;
@@ -253,9 +276,9 @@ const addCartToHTML = () => {
                 </div>
                 <div class="totalPrice">$${info.price * item.quantity}</div>
                 <div class="quantity">
-                    <span class="minus"><</span>
+                    <span class="minus">-</span>
                     <span>${item.quantity}</span>
-                    <span class="plus">></span>
+                    <span class="plus">+</span>
                 </div>
             `;
         })
@@ -314,4 +337,20 @@ const initApp = () => {
 }
 initApp();
 
+const iniApp = () => {
+    // get data product
+    fetch('prodimage.json')
+    .then(response => response.json())
+    .then(data => {
+        prodimage = data;
+        addDataToHTML();
+
+        // get data cart from memory
+        if(localStorage.getItem('cart')){
+            cart = JSON.parse(localStorage.getItem('cart'));
+            addCartToHTML();
+        }
+    })
+}
+iniApp();
 
