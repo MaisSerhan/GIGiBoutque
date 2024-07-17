@@ -471,7 +471,7 @@ color: #838383;
     } 
     .navbar__menu ul .off{
         display: block;
-        height: 30px;
+        height: 40px;
     }       
     }
 @media(max-width:530px){
