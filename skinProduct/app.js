@@ -37,7 +37,7 @@ const navbar= ()=>{
 
     let a =document.querySelector("#section4");
     a.innerHTML = "الرئيسية";
-    a.setAttribute("href","//gigi-boutque.vercel.app/")
+    a.setAttribute("href","../index.html");
     a =document.querySelector("#section3");
     a.innerHTML = `<button class="on" onclick="show1('.navbar__menu #navbar__list2 ')">منتجاتنا </button>`;  
     a =document.querySelector("#section2");
@@ -47,7 +47,7 @@ const navbar= ()=>{
 
     a =document.querySelector("#aside__list #section4");
     a.innerHTML = "الرئيسية";
-    a.setAttribute("href","//gigi-boutque.vercel.app/")
+    a.setAttribute("href","../index.html");
     a =document.querySelector("#aside__list #section3");
     a.innerHTML = `<button class="on" onclick="show1('#aside__list2')">منتجاتنا </button>`;  
     a =document.querySelector("#aside__list #section2");

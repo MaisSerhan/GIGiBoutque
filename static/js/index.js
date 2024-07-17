@@ -21,7 +21,7 @@ const navbar= ()=>{
     };
     let a =document.querySelector("#section4");
     a.innerHTML = "الرئيسية";
-    a.setAttribute("href","//gigi-boutque.vercel.app/")
+    a.setAttribute("href","index.html");
     a =document.querySelector("#section3");
     a.innerHTML = `منتجاتنا `;  
     a.setAttribute("href","../../skinProduct/index2.html")
