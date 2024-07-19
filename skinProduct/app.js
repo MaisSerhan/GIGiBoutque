@@ -23,7 +23,7 @@ const navbar= ()=>{
     for(let i=0;i<5;i++){
     let n=`Section ${i}`;
     let c=`section${i}`;
-    let a =`<a class="menu__link" id="${c}" href="#${c}" ></a>`;
+    let a =`<a class="menu__link" id="${c}"  ></a>`;
     let li=document.createElement("li");
     li.setAttribute('class',`nav__item ${c}`);
     let li2=document.createElement("li");
@@ -38,7 +38,7 @@ const navbar= ()=>{
 
     let a =document.querySelector("#section4");
     a.innerHTML = "الرئيسية";
-    a.setAttribute("href","../index.html");
+    a.setAttribute("href","../../index.html");
     a =document.querySelector("#section3");
     a.innerHTML = `<button class="on" onclick="show1('.navbar__menu #navbar__list2 ')">منتجاتنا </button>`;  
     a =document.querySelector("#section2");
@@ -48,7 +48,7 @@ const navbar= ()=>{
 
     a =document.querySelector("#aside__list #section4");
     a.innerHTML = "الرئيسية";
-    a.setAttribute("href","../index.html");
+    a.setAttribute("href","../../index.html");
     a =document.querySelector("#aside__list #section3");
     a.innerHTML = `<button class="on" onclick="show1('#aside__list2')">منتجاتنا </button>`;  
     a =document.querySelector("#aside__list #section2");
@@ -57,6 +57,7 @@ const navbar= ()=>{
     a.innerHTML = "العروض "; 
     a =document.querySelector("#aside__list #section0");
     a.innerHTML = "التواصل والاستفسار "; 
+     a.setAttribute("href" , "https://api.whatsapp.com/send?phone=972568515279" );
     
   };
   
@@ -112,7 +113,7 @@ function show1(str){
       for(let i=0;i<9;i++){
       let n=`Section ${i+5}`;
       let c=`section${i+5}`;
-      let a =`<a class="menu__link" id="${c}" href="#${c}" ></a>`;
+      let a =`<a class="menu__link" id="${c}"  ></a>`;
       let li=document.createElement("li");
       li.setAttribute('class',`nav__item ${c}`);
       let li2=document.createElement("li");
@@ -126,45 +127,61 @@ function show1(str){
       };
       let a =document.querySelector("#aside__list2 #section13");
       a.innerHTML = "اكسسوارات";
-      a.setAttribute("href","//gigi-boutque.vercel.app/")
+      a.setAttribute("href","../accessories/acess.html");
       a =document.querySelector("#aside__list2 #section12");
       a.innerHTML = "عطور رجالية ";    
+      a.setAttribute("href","../male/male.html");
       a =document.querySelector("#aside__list2 #section11");
       a.innerHTML = " عطور نسائية ";  
+      a.setAttribute("href","../femal/femal.html");
       a =document.querySelector("#aside__list2 #section10");
-      a.innerHTML = "منتجات الحامل "; 
+      a.innerHTML = "منتجات الحامل ";
+      a.setAttribute("href","../pregnant/pregnant.html");
       a =document.querySelector("#aside__list2 #section9");
       a.innerHTML = "منتجات الشعر "; 
+      a.setAttribute("href","../heir/heir.html");
       a =document.querySelector("#aside__list2 #section8");
       a.innerHTML = "منتجات القدم واليدين "; 
+      a.setAttribute("href","../leg/leg.html");
       a =document.querySelector("#aside__list2 #section7");
       a.innerHTML = "منتجات الجسم "; 
+      a.setAttribute("href","../body/body.html");
       a =document.querySelector("#aside__list2 #section6");
       a.innerHTML = "منتجات البشرة ";
+      a.setAttribute("href", "../skin/index2.html");
       a =document.querySelector("#aside__list2 #section5");
       a.innerHTML = " make up ";
-      a.style.color="#b69292";
+      a.setAttribute("href","../makeup/makeup.html");
+      
 
       a =document.querySelector("#section13");
       a.innerHTML = "اكسسوارات";
-      a.setAttribute("href","//gigi-boutque.vercel.app/")
+      a.setAttribute("href","../accessories/acess.html");
       a =document.querySelector("#section12");
       a.innerHTML = "عطور رجالية ";    
+      a.setAttribute("href","../male/male.html");
       a =document.querySelector("#section11");
       a.innerHTML = " عطور نسائية ";  
+      a.setAttribute("href","../femal/femal.html");
       a =document.querySelector("#section10");
       a.innerHTML = "منتجات الحامل "; 
+      a.setAttribute("href","../pregnant/pregnant.html");
       a =document.querySelector("#section9");
       a.innerHTML = "منتجات الشعر "; 
+      a.setAttribute("href","../heir/heir.html");
       a =document.querySelector("#section8");
-      a.innerHTML = "منتجات القدم واليدين "; 
+      a.innerHTML = "منتجات القدم واليدين ";
+      a.setAttribute("href","../leg/leg.html"); 
       a =document.querySelector("#section7");
       a.innerHTML = "منتجات الجسم "; 
+      a.setAttribute("href", "../body/body.html");
       a =document.querySelector("#section6");
       a.innerHTML = "منتجات البشرة ";
+      a.setAttribute("href", "../skin/index2.html");
       a =document.querySelector("#section5");
       a.innerHTML = " make up ";
-      a.style.color="#b69292";
+      a.setAttribute("href", "../makeup/makeup.html");
+      
       let close2=document.createElement("button");
       close2.setAttribute("onclick",`show("#navbar__list")`);
       close2.innerHTML="X";
@@ -183,31 +200,7 @@ closeCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
 })
 
-    const addDataToHTML = () => {
-    // remove datas default from HTML
-
-        // add new datas
-        if(products.length > 0) // if has data
-        {
-            products.forEach(product => {
-                let newProduct = document.createElement('a');
-                newProduct.dataset.id = product.id;
-                newProduct.classList.add('item');
-                newProduct.setAttribute("href","#2");
-                newProduct.innerHTML = 
-                `<img src="${product.image}" alt="" id="img${product.id}" >
-                <h2>${product.name}</h2>
-                <div class="price">$${product.price}</div>
-                <button class="addCart">Add To Cart</button>`;
-                listProductHTML.appendChild(newProduct);
-                let m=document.getElementById(`img${product.id}`);
-                let src=m.src;
-                newProduct.setAttribute("onclick",`changeImg( "${src}" ,${product.id} )`);
-            });
-        }
-    }
-
-    function changeImg(src,id){
+function changeImg(src,id){
         let idimg = document.getElementById(`img${id}`);
         if(idimg==null){
             idimg = document.getElementById(`p${id}`);  
@@ -257,31 +250,38 @@ const addCartToMemory = () => {
 const addCartToHTML = () => {
     listCartHTML.innerHTML = '';
     let totalQuantity = 0;
+    
     if(cart.length > 0){
         cart.forEach(item => {
             totalQuantity = totalQuantity +  item.quantity;
             let newItem = document.createElement('div');
             newItem.classList.add('item');
             newItem.dataset.id = item.product_id;
-
+           
             let positionProduct = products.findIndex((value) => value.id == item.product_id);
             let info = products[positionProduct];
             listCartHTML.appendChild(newItem);
+            listCartHTML.appendChild(newItem);
+
+            if(positionProduct > -1){
             newItem.innerHTML = `
-            <div class="image">
-                    <img src="${info.image}">
-                </div>
-                <div class="name">
-                ${info.name}
-                </div>
-                <div class="totalPrice">$${info.price * item.quantity}</div>
-                <div class="quantity">
-                    <span class="minus">-</span>
-                    <span>${item.quantity}</span>
-                    <span class="plus">+</span>
-                </div>
-            `;
-        })
+                <div class="image">
+                        <img src="${info.image}">
+                    </div>
+                    <div class="name">
+                    ${info.name}
+                    </div>
+                    <div class="totalPrice">$${info.price * item.quantity}</div>
+                    <div class="quantity">
+                        <span class="minus">-</span>
+                        <span>${item.quantity}</span>
+                        <span class="plus">+</span>
+                    </div>
+           `;
+        }
+        else totalQuantity = totalQuantity -  item.quantity;
+        console.log(totalQuantity);
+    })
     }
     iconCartSpan.innerText = totalQuantity;
 }
@@ -322,7 +322,7 @@ const changeQuantityCart = (product_id, type) => {
 
 const initApp = () => {
     // get data product
-    fetch('products.json')
+    fetch('../products.json')
     .then(response => response.json())
     .then(data => {
         products = data;
@@ -339,17 +339,10 @@ initApp();
 
 const iniApp = () => {
     // get data product
-    fetch('prodimage.json')
+    fetch('../prodimage.json')
     .then(response => response.json())
     .then(data => {
         prodimage = data;
-        addDataToHTML();
-
-        // get data cart from memory
-        if(localStorage.getItem('cart')){
-            cart = JSON.parse(localStorage.getItem('cart'));
-            addCartToHTML();
-        }
     })
 }
 iniApp();

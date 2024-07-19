@@ -115,6 +115,7 @@ body aside ul{
 .listProduct .item .price{
     letter-spacing: 7px;
     font-size: small;
+    margin-top: 7px;
 }
 .listProduct .item button{
     background-color: #353432;
@@ -124,6 +125,21 @@ body aside ul{
     margin-top: 10px;
     border-radius: 20px;
     cursor: pointer;
+}
+.listProduct .item .itemdiv{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.listProduct .item .l{
+list-style-type: none;
+color: #927740;
+background-color: #353432;
+border-radius: 50%;
+width: 16px;
+height: 16px;
+margin: 17px 12px 0 12px;
+cursor: auto;
 }
 
 

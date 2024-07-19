@@ -24,7 +24,7 @@ const navbar= ()=>{
     a.setAttribute("href","index.html");
     a =document.querySelector("#section3");
     a.innerHTML = `منتجاتنا `;  
-    a.setAttribute("href","../../skinProduct/index2.html")
+    a.setAttribute("href","../skinProduct/makeup/makeup.html")
     a =document.querySelector("#section2");
     a.innerHTML = "تعرف علينا ";  
     a.setAttribute("href","#Know");
