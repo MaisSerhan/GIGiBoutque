@@ -232,6 +232,9 @@ body.showCart .container{
 .listProduct .item button.color:hover{
     border: #353432 2px solid;
 }
+.checkOut a{
+    padding: 30px 58px;
+}
 footer {
     margin-top: 50px;
 }
