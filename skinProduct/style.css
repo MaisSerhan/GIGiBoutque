@@ -155,7 +155,7 @@ cursor: auto;
     padding: 5px;
     height: 99%;
     display: grid;
-    grid-template-rows: 70px 1fr 70px;
+    grid-template-rows: 94px 1fr 70px;
     transition: .5s;
     z-index: 5;
 }
