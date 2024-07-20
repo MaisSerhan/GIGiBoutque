@@ -17,15 +17,13 @@ const addDataToHTML = () => {
             newProduct.innerHTML = 
             `<img src="${product.image}" alt="" id="img${product.id}" >
             <h2>${product.name}</h2>
-            ${itemdiv}
+           
             <div class="price">$${product.price}</div>
-            
+             ${itemdiv}
             <button class="addCart">Add To Cart</button>`;
             listProductHTML.appendChild(newProduct);
-            console.log(product.id)
             let m=document.getElementById(`img${product.id}`);
             let src=m.src;
-            console.log(src)
             newProduct = document.querySelector(`.listProduct .item .colorhave${i}`);
             newProduct.setAttribute("onclick",`changeImg( "${src}" ,${product.id} )`);
             };

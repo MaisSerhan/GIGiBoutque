@@ -80,6 +80,7 @@ main img {
 main a{
     height: fit-content;
     display: inline-block;
+    margin-left: 21px;
 }
 
 }

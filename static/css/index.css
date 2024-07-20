@@ -213,12 +213,12 @@ grid-area: 4 / 1 / 6 / 3;}
 position: relative;}
 
 .product div a::before{
-    padding: 12px 0 0px;
+    padding: 12px 0;
     content: "خصم";
     width: 59%;
-    height: 35px;
+    height: fit-content;
     position: absolute;
-    top: -44px;
+    bottom: 17px;
     left: 65px;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
