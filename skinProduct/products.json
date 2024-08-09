@@ -1,0 +1,132 @@
+[
+    {
+        "id": 1,
+        "name":" LD01 LOUNGE CHAIR",
+        "price": 200,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuQxNCoUAfRQ67jSIZAn9isuQEUsC9cc1QPw&s",
+        "color": "الالوان المتوفرة"
+    },
+    {
+        "id": 2,
+        "name":" LD02 LOUNGE CHAIR",
+        "price": 250,
+        "image": "https://eg.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/67/694032/1.jpg?1207",
+        "color": "الالوان المتوفرة"
+    },
+    {
+        "id": 3,
+        "name":" LD03 LOUNGE CHAIR",
+        "price": 290,
+        "image": "https://s.alicdn.com/@sc04/kf/H4cf6cb31b59e44a5be3efa80a81be763w.jpg_300x300.jpg",
+        "color": "الالوان المتوفرة"
+    },
+    {
+        "id": 4,
+        "name":" LD04 LOUNGE CHAIR",
+        "price": 200,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCp8Ka_ACUfWDaj6VZPSXk_J7VOQmMwyGq4g&s",
+        "color": "الالوان المتوفرة"
+    },
+    {
+        "id": 5,
+        "name":" LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "https://m.media-amazon.com/images/I/31vZTStmA2L._SR290,290_.jpg",
+        "color":"green",
+        "type":"دهنية"
+    },
+    {
+        "id": 6,
+        "name":" LD06 LOUNGE CHAIR",
+        "price": 200,
+        "image": "../image/6.png",
+        "color":"#dea668",
+        "type":"جافة"
+    },
+    {
+        "id": 7,
+        "name":" LD07 LOUNGE CHAIR",
+        "price": 200,
+        "image": "../image/7.png"
+    },
+    {
+        "id": 8,
+        "name":" LD08 LOUNGE CHAIR",
+        "price": 200,
+        "image": "../image/8.png"
+    },
+    {
+        "id": 9,
+        "name":" LD08 LOUNGE CHAIR",
+        "price": 200,
+        "image": "../image/9.png"
+    },
+    {
+        "id": 10,
+        "name":" LD08 LOUNGE CHAIR",
+        "price": 200,
+        "image": "../image/10.png"
+    }
+    
+    ,{
+        "id": 11,
+        "name":" LD01 LOUNGE CHAIR",
+        "price": 200,
+        "image": "../image/1.png"
+    },
+    {
+        "id": 12,
+        "name":" LD02 LOUNGE CHAIR",
+        "price": 250,
+        "image": "../image/2.png"
+    },
+    {
+        "id": 13,
+        "name":" LD03 LOUNGE CHAIR",
+        "price": 290,
+        "image": "../image/3.png"
+    },
+    {
+        "id": 14,
+        "name":" LD04 LOUNGE CHAIR",
+        "price": 200,
+        "image": "../image/4.png"
+    },
+    {
+        "id": 15,
+        "name":" LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "../image/5.png"
+    },
+    {
+        "id": 16,
+        "name":" LD06 LOUNGE CHAIR",
+        "price": 200,
+        "image": "../image/6.png"
+    },
+    {
+        "id": 17,
+        "name":" LD07 LOUNGE CHAIR",
+        "price": 200,
+        "image": "../image/7.png"
+    },
+    {
+        "id": 18,
+        "name":" LD08 LOUNGE CHAIR",
+        "price": 200,
+        "image": "../image/8.png"
+    },
+    {
+        "id": 19,
+        "name":" LD08 LOUNGE CHAIR",
+        "price": 200,
+        "image": "../image/9.png"
+    },
+    {
+        "id": 20,
+        "name":" LD08 LOUNGE CHAIR",
+        "price": 200,
+        "image": "../image/10.png"
+    }
+
+]
