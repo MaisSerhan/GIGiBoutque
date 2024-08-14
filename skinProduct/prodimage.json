@@ -1,0 +1,56 @@
+[
+    
+    {
+        "image": "../image/1.png"
+        
+    },
+    {   "image": "../image/21.png",
+        "image1": "../image/22.png",
+        "color":"TAUPE",
+        "color1":"BLONDE"
+                
+    },
+    {   "image": "../image/23.png",
+        "image1": "../image/2.png",
+        "color":"الاسود",
+        "two":"two"
+    },
+    {   "image": "../image/24.png",
+        "image1": "../image/25.png",
+        "color":"لتطويل الرموش",
+        "color1":"لتكثيف الرموش"
+    },
+    {   "image": "../image/30.png",
+        "image1": "../image/2.png",
+        "color":"#01 MELON",
+        "two":"two"
+
+    },
+    {
+
+    },
+    {   "image": "../image/26.png",
+        "color":"(15ml)",
+        "two":"two"
+    },
+    {   "image": "../image/27.png",
+        "color": "الالوان المتوفرة ",
+        "two":"two"
+    },
+    {   "image": "../image/28.png",
+        "color": "الالوان المتوفرة ",
+        "two":"two"
+    },
+    {
+
+    },
+    {
+
+    },
+    {   "image": "../image/29.png",
+        "color":"أحجام مختلفة",
+        "two":"two"
+
+    }
+]
+
