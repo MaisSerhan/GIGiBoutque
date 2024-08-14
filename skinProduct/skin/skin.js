@@ -6,7 +6,7 @@ const addDataToHTML = () => {
         
         if(products.length > 0) // if has data
         {
-           for(let i=4;i<6 ;i++){
+           for(let i=0;i<0 ;i++){
                 let itemdiv=`<div class="itemdiv">`;
                 let product=products[i];
                 let newProduct = document.createElement('div');

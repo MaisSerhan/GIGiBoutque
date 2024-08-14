@@ -4,7 +4,7 @@ const addDataToHTML = () => {
         // add new datas
         if(products.length > 0) // if has data
         {
-           for(let i=10;i<15 ;i++){
+           for(let i=0;i<0 ;i++){
                 let product=products[i];
                 let newProduct = document.createElement('a');
                 newProduct.dataset.id = product.id;

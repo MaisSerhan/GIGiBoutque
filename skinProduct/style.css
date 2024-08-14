@@ -122,9 +122,10 @@ body aside ul{
     font-size: large;
 }
 .listProduct .item .price{
-    letter-spacing: 7px;
-    font-size: small;
+    letter-spacing: 1px;
+    font-size: large;
     margin-top: 7px;
+    font-weight: 900;
 }
 .listProduct .item button{
     background-color: #353432;
@@ -305,7 +306,10 @@ footer {
         color: white;
     }
 }
-    
+.fa-solid, .fas {
+    font-weight: 900;
+    margin-right: 5px;
+}   
 
 @media only screen and (max-width: 992px) {
     .listProduct{
