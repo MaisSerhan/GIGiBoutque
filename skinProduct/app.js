@@ -11,7 +11,6 @@ let products = [];
 let prodimage = [];
 let cart = [];
 
-
 const navbar= ()=>{
     let close=document.createElement("button");
     close.innerHTML="X";
@@ -279,7 +278,6 @@ const addCartToHTML = () => {
            `;
         }
         else totalQuantity = totalQuantity -  item.quantity;
-        console.log(totalQuantity);
     })
     }
     iconCartSpan.innerText = totalQuantity;
