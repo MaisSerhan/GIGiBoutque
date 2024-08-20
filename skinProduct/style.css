@@ -167,7 +167,7 @@ cursor: auto;
     padding: 5px;
     height: 99%;
     display: grid;
-    grid-template-rows: 94px 1fr 70px;
+    grid-template-rows: 94px 1fr 90px;
     transition: .5s;
     z-index: 5;
 }
@@ -183,7 +183,13 @@ body.showCart .container{
 }
 .cartTab .btn{
     display: grid;
+    text-align: center;
+    grid-template-rows: 0.5fr 1fr;
     grid-template-columns: repeat(2, 1fr);
+}
+.cartTab .btn p{
+    grid-area: 1 / 1 / 2 / 3;
+    height: 8px;
 }
 .cartTab button{
     background-color: #E8BC0E;

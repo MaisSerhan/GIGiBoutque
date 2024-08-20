@@ -1,4 +1,3 @@
-
 const addDataToHTML = () => {
         if(products.length > 0) 
         {
@@ -61,3 +60,4 @@ let s=document.getElementById("section5");
 s.style.color="#b69292";
 s=document.querySelector("aside #section5");
 s.style.color="#b69292";
+

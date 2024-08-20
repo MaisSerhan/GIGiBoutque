@@ -24,7 +24,7 @@ const navbar= ()=>{
     a.setAttribute("href","index.html");
     a =document.querySelector("#section3");
     a.innerHTML = `منتجاتنا `;  
-    a.setAttribute("href","../skinProduct/makeup/makeup.html")
+    a.setAttribute("href","skinProduct/makeup/makeup.html")
     a =document.querySelector("#section2");
     a.innerHTML = "تعرف علينا ";  
     a.setAttribute("href","#Know");
@@ -64,7 +64,7 @@ function show(str){
 
 let img= document.querySelector("#change");
 console.log(img.style.backgroundImage);
-let imges=['../static/photo/image1.png','../static/photo/image2.png'];
+let imges=['static/photo/image1.png','static/photo/image2.png'];
 
 let random=0;
 
