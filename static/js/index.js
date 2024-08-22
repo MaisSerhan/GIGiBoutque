@@ -64,7 +64,7 @@ function show(str){
 
 let img= document.querySelector("#change");
 console.log(img.style.backgroundImage);
-let imges=['static/photo/image1.png','static/photo/image2.png'];
+let imges=['https://ik.imagekit.io/cywqg5brs/images2/image1.png?updatedAt=1724326203943','https://ik.imagekit.io/cywqg5brs/images2/image2.png?updatedAt=1724326227414'];
 
 let random=0;
 
