@@ -1,55 +1,95 @@
 [
-    
-    {
-        "image": "../image2/1.jpg"
-        
+    {   
+        "id": 1,
+        "image1": "https://ik.imagekit.io/cywqg5brs/tr:w-800/images2/1.jpg?updatedAt=1724318587163",
+        "image2": "https://ik.imagekit.io/cywqg5brs/tr:w-800/images2/2.jpg?updatedAt=1724318588268",
+        "image": "../image/1.jpg",
+        "color1":"TAUPE",
+        "color2":"BLONDE",
+        "color": "الالوان المتوفرة",
+        "lengths":3                
     },
-    {   "image": "../images2/1.jpg",
-        "image1": "../images2/2.jpg",
-        "color":"TAUPE",
-        "color1":"BLONDE"
-                
+    {   
+        "id": 2,
+        "image1": "https://ik.imagekit.io/cywqg5brs/tr:w-800/images2/3.jpg?updatedAt=1724318587505",
+        "image": "../image/2.jpg",
+        "color1":"الاسود",
+        "color": "الالوان المتوفرة",
+        "lengths":2 
     },
-    {   "image": "../images2/3.jpg",
-        "image1": "../image2/2.jpg",
-        "color":"الاسود",
-        "two":"two"
+    {   
+        "id": 3,
+        "image1": "https://ik.imagekit.io/cywqg5brs/tr:w-800/images2/4.jpg?updatedAt=1724318584826",
+        "image2": "https://ik.imagekit.io/cywqg5brs/tr:w-800/images2/5.jpg?updatedAt=1724318585131",
+        "image": "../image/3.jpg",
+        "color1":"لتطويل الرموش",
+        "color2":"لتكثيف الرموش",
+        "color": "يستخدم للرموش ",
+        "lengths":3 
     },
-    {   "image": "../images2/4.jpg",
-        "image1": "../images2/5.jpg",
-        "color":"لتطويل الرموش",
-        "color1":"لتكثيف الرموش"
+    {   
+        "id": 4,
+        "image1": "https://ik.imagekit.io/cywqg5brs/tr:w-600/images2/6.jpg?updatedAt=1724318584366",
+        "image": "../image/4.jpg",
+        "color1":"#01 MELON",
+        "color": "الالوان المتوفرة",
+        "lengths":2
     },
-    {   "image": "../images2/6.jpg",
-        "color":"#01 MELON",
-        "two":"two"
+    {   "id": 5,
+        "image": "../image/5.jpg",
+        "color": "يثبته طوال اليوم",
+        "lengths":1
 
     },
-    {
-
+    {   "id": 6,
+        "image1": "https://ik.imagekit.io/cywqg5brs/tr:w-600/images2/7.jpg?updatedAt=1724318587664",
+        "image": "../image/6.jpg",
+        "color1":"(15ml)",
+        "color":"Beauty Oil",
+        "lengths":2 
     },
-    {   "image": "../images2/7.jpg",
-        "color":"(15ml)",
-        "two":"two"
-    },
-    {   "image": "../images2/8.jpg",
+    {   
+        "id": 7,
+        "image1": "https://ik.imagekit.io/cywqg5brs/tr:w-600/images2/8.jpg?updatedAt=1724318587660",
+        "image": "../image/7.jpg",
+        "color1": "الالوان المتوفرة ",
         "color": "الالوان المتوفرة ",
-        "two":"two"
+        "lengths":2 
     },
-    {   "image": "../images2/9.jpg",
+    {   
+        "id": 8,
+        "image1": "https://ik.imagekit.io/cywqg5brs/tr:w-600/images2/9.jpg?updatedAt=1724318587319",
+        "image": "../image/8.jpg",
+        "color1": "الالوان المتوفرة ",
         "color": "الالوان المتوفرة ",
-        "two":"two"
+        "lengths":2 
     },
-    {
+    {   "id": 9,
+        "image": "../image/9.jpg",
+        "color":"باللون الاسود",
+        "lengths":1
 
     },
-    {
-
+    {   
+        "id": 10,
+        "image": "../image/10.jpg",
+        "lengths":1
     },
-    {   "image": "../images2/10.jpg",
+    {   
+        "id": 11,
+        "image1": "https://ik.imagekit.io/cywqg5brs/tr:w-600/images2/10.jpg?updatedAt=1724318586681",
+        "image": "../image/11.jpg",
+        "color1":"أحجام مختلفة",
         "color":"أحجام مختلفة",
-        "two":"two"
-
+        "lengths":2
+    },
+    {
+        "id": 12,
+        "image": "../image/12.jpg",
+        "color":"4 Piece"
     }
+
+
+
 ]
 
