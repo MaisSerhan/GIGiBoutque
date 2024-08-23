@@ -248,8 +248,8 @@ body.showCart .container{
     padding:10px;
     border-radius: 50%;
 }
-.listProduct .item:nth-child(6) h2 ,.listProduct .item:nth-child(12) h2{
-    font-size: small;
+.listProduct .item:nth-child(13) h2 ,.listProduct .item:nth-child(12) h2 ,.listProduct .item:nth-child(22) h2{
+    font-size: medium;
 }
 .listProduct .item button.color:hover{
     border: #353432 2px solid;
@@ -262,6 +262,9 @@ footer {
     background-color: #f1f1f1;;
 }
 
+.hidden , .hidden2{
+    display: none !important;
+}
 @media only screen and (max-width: 1145px) {
     .container{
         margin-top: 261px;
