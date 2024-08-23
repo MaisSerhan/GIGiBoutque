@@ -249,7 +249,7 @@ body.showCart .container{
     border-radius: 50%;
 }
 .listProduct .item:nth-child(13) h2 ,.listProduct .item:nth-child(12) h2 ,.listProduct .item:nth-child(22) h2{
-    font-size: medium;
+    font-size: 15px;
 }
 .listProduct .item button.color:hover{
     border: #353432 2px solid;
