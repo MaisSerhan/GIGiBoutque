@@ -1,0 +1,6 @@
+@import url("../style.css");
+
+.listProduct .item h2 {
+    font-weight: 500;
+    font-size: medium;
+}
