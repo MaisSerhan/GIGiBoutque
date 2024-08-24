@@ -7,7 +7,7 @@ let closeCart = document.querySelector('.close');
 const nav=document.querySelector(".navbar__menu");
 let ul=document.getElementById("navbar__list");
 let asul=document.getElementById("aside__list");
-let products = [[]];
+let products = [];
 let prodimage = [];
 let cart = [];
 var source="2"; 
@@ -233,9 +233,9 @@ const addCartToHTML = () => {
             let newItem = document.createElement('div');
             newItem.classList.add('item');
             newItem.dataset.id = item.product_id;
-            let i=getindex();
-            let positionProduct = products[i].findIndex((value) => value.id == item.product_id);
-            let info = products[i][positionProduct];
+           
+            let positionProduct = products.findIndex((value) => value.id == item.product_id);
+            let info = products[positionProduct];
             listCartHTML.appendChild(newItem);
             listCartHTML.appendChild(newItem);
 
@@ -295,25 +295,24 @@ const changeQuantityCart = (product_id, type) => {
     addCartToMemory();
 }
 
-const initApp2 = () => {
+const initApp2 = (s,e) => {
     // get data product
     fetch('../prodimage.json')
     .then(response => response.json())
     .then(data => {
         products = data;
-        addDatasToHTMl();
+        addDatasToHTMl(s,e);
 
     })
 }
-initApp2();
 
-const initApp = () => {
+const initApp = (s,e) => {
     // get data product
     fetch('../products.json')
     .then(response => response.json())
     .then(data => {
         products = data;
-        addDataToHTML();
+        addDataToHTML(s,e);
 
         // get data cart from memory
         if(localStorage.getItem('cart')){
@@ -323,105 +322,105 @@ const initApp = () => {
     })
 }
 
-initApp();
 
+var srcs=[];
+const addDataToHTML = (s, e) => {
+        if(products.length > 0) 
+        {
+           for(let i=s;i<e ;i++){
+            let itemdiv=`<div class="itemdiv">`;
+            let product=products[i];
+            let newProduct = document.createElement('div');
+            
+            newProduct.dataset.id = product.id;
+            newProduct.classList.add('item');
+            newProduct.setAttribute("id",`item${i}`);
+            
+            itemdiv= itemdiv + `\n<button class="colorhave${i}" >${product.color}</button>`;
+            itemdiv+="\n</div>";
+            
+            newProduct.innerHTML = 
+            `<img src="${product.image}" loading="lazy" alt="" id="img${product.id}">
+             <h2>${product.name}</h2>
+           
+            <div class="price"><i class="fa-solid fa-shekel-sign fa-xs" style="color: #000000;"></i>${product.price}</div>
+             ${itemdiv}
+            <button class="addCart">Add To Cart</button>`;
+           
+            if(product.class2=="small"){
+                newProduct.innerHTML = 
+               `<img src="${product.image}" loading="lazy" alt="" id="img${product.id}" class="small">
+                <h2>${product.write}</h2>
+                <h2>${product.name}</h2>
+               
+                <div class="price"><i class="fa-solid fa-shekel-sign fa-xs" style="color: #000000;"></i>${product.price}</div>
+                 ${itemdiv}
+                <button class="addCart">Add To Cart</button>`;
+    
+            }
+            newProduct.classList.add(product.class);
+            if(product.class2=="hidden2"){
+                newProduct.classList.add(product.class2);
+            }
 
-
-const addDataToHTML = () => {
-    let j=getindex();
-    let start=getstart();
-    let end=getend();
-    if(products[j].length > 0) 
+            listProductHTML.appendChild(newProduct);
+            let src=document.getElementById(`img${product.id}`).src;
+           
+            newProduct = document.querySelector(`.listProduct .item .colorhave${i}`);
+            newProduct.setAttribute("onclick",`changeImg( ${i}, "item${i}")`);
+            };
+        }
+    }
+const  addDatasToHTMl = (s, e)=> {
+    if(products.length > 0) 
     {
-       for(let i=start;i<end ;i++){
-        let itemdiv=`<div class="itemdiv">`;
-        let product=products[j][i];
-        let newProduct = document.createElement('div');
-        
-        newProduct.dataset.id = product.id;
-        newProduct.classList.add('item');
-        newProduct.setAttribute("id",`item${i}`);
-        
-        itemdiv= itemdiv + `\n<button class="colorhave${i}" >${product.color}</button>`;
-        itemdiv+="\n</div>";
-        
-        newProduct.innerHTML = 
-        `<img src="${product.image}" loading="lazy" alt="" id="img${product.id}">
-         <h2>${product.name}</h2>
-       
-        <div class="price"><i class="fa-solid fa-shekel-sign fa-xs" style="color: #000000;"></i>${product.price}</div>
-         ${itemdiv}
-        <button class="addCart">Add To Cart</button>`;
-       
-        newProduct.classList.add(product.class);
-        if(product.class2=="hidden2"){
-            newProduct.classList.add(product.class2);
-        }
-
-        listProductHTML.appendChild(newProduct);
-        let src=document.getElementById(`img${product.id}`).src;
-       
-        newProduct = document.querySelector(`.listProduct .item .colorhave${i}`);
-        newProduct.setAttribute("onclick",`changeImg( ${i}, "item${i}")`);
-        
-        };
-    }
-}
-const  addDatasToHTMl = ()=> {
-let j=getindex();
-let start=getstart();
-let end=getend();
-if(products[j].length > 0) 
-{
-    for(let i=start;i<end ;i++){
-        console.log()
-        let product=products[j][i];
-        if(product.lengths==1){
-            srcs[i]=[1,product.image];
-        }
-        else if(product.lengths==2){
-            srcs[i]=[2,product.image1, product.image];
-        }
-        else if(product.lengths==3){
-            srcs[i]=[3,product.image1, product.image2, product.image];
+        for(let i=s;i<e ;i++){
+            let product=products[i];
+            if(product.lengths==1){
+                srcs[i]=[1,product.image];
+            }
+            else if(product.lengths==2){
+                srcs[i]=[2,product.image1, product.image];
+            }
+            else if(product.lengths==3){
+                srcs[i]=[3,product.image1, product.image2, product.image];
+            }
         }
     }
-}
 };
-
+    
 function changeImg(i ,id){
-let elem ="", elem1="",elem2="";
-if(srcs[i][0]>=3){
-elem =document.getElementById(srcs[i][3]);
-}
-if(srcs[i][0]>=2){
-elem1 =document.getElementById(srcs[i][2]);
-}
-if(srcs[i][0]>=1){
-elem2 =document.getElementById(srcs[i][1]); 
-}
+    let elem ="", elem1="",elem2="";
+    if(srcs[i][0]>=3){
+    elem =document.getElementById(srcs[i][3]);
+    }
+    if(srcs[i][0]>=2){
+    elem1 =document.getElementById(srcs[i][2]);
+    }
+    if(srcs[i][0]>=1){
+    elem2 =document.getElementById(srcs[i][1]); 
+    }
+    
+    for(let j=1;j<=srcs[i][0];j++){
+        if(!document.getElementById(srcs[i][j]).classList.contains("hidden")){
+            document.getElementById(srcs[i][j]).classList.add("hidden");
+        }
+    }
 
-for(let j=1;j<=srcs[i][0];j++){
-    if(!document.getElementById(srcs[i][j]).classList.contains("hidden")){
-        document.getElementById(srcs[i][j]).classList.add("hidden");
+    
+    if(id==srcs[i][3]&&srcs[i][0]>=1){
+        document.getElementById(srcs[i][1]).classList.toggle("hidden");
+    }
+    else if(id==srcs[i][2]&&srcs[i][0]==2){
+        document.getElementById(srcs[i][1]).classList.toggle("hidden");
+    }
+    else if(id==srcs[i][1]&&srcs[i][0]>=2){
+        document.getElementById(srcs[i][2]).classList.toggle("hidden");
+    }
+    else if(id==srcs[i][2]&&srcs[i][0]>=3){
+        document.getElementById(srcs[i][3]).classList.toggle("hidden");
+    }
+    else{
+        document.getElementById(srcs[i][srcs[i][0]]).classList.toggle("hidden"); 
     }
 }
-
-if(id==srcs[i][3]&&srcs[i][0]>=1){
-    document.getElementById(srcs[i][1]).classList.toggle("hidden");
-}
-else if(id==srcs[i][2]&&srcs[i][0]==2){
-    document.getElementById(srcs[i][1]).classList.toggle("hidden");
-}
-else if(id==srcs[i][1]&&srcs[i][0]>=2){
-    document.getElementById(srcs[i][2]).classList.toggle("hidden");
-}
-else if(id==srcs[i][2]&&srcs[i][0]>=3){
-    document.getElementById(srcs[i][3]).classList.toggle("hidden");
-}
-else{
-    document.getElementById(srcs[i][srcs[i][0]]).classList.toggle("hidden"); 
-}
-}
-
-
