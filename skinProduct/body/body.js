@@ -1,6 +1,11 @@
-initApp2(50,75);
-initApp(50,75);
-    let s=document.getElementById("section7");
-    s.style.color="#b69292";
-    s=document.querySelector("aside #section7");
-    s.style.color="#b69292";
+var srcs=[];
+
+function getstart(){
+    return 50;
+}
+function getend(){
+    return 74;
+}
+
+document.getElementById("section7").style.color="#b69292";
+document.querySelector("aside #section7").style.color="#b69292";

@@ -1,10 +1,14 @@
-initApp2(0,22);
-initApp(0,22);
+var srcs=[];
 
-let s=document.getElementById("section5");
-s.style.color="#b69292";
-s=document.querySelector("aside #section5");
-s.style.color="#b69292";
+function getstart(){
+    return 0;
+}
+function getend(){
+    return 22;
+}
+
+document.getElementById("section5").style.color="#b69292";
+document.querySelector("aside #section5").style.color="#b69292";
 
 /*https://imagekit.io/dashboard/media-library/L2ltYWdlczI*/
 /*https://tinyjpg.com/*/

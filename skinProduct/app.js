@@ -11,6 +11,7 @@ let products = [];
 let prodimage = [];
 let cart = [];
 var source="2"; 
+let s,e;
 
 const navbar= ()=>{
     let close=document.createElement("button");
@@ -202,6 +203,7 @@ listProductHTML.addEventListener('click', (event) => {
 })
 
 const addToCart = (product_id) => {
+   // console.log(product_id);
     let positionThisProductInCart = cart.findIndex((value) => value.product_id == product_id);
     if(cart.length <= 0){
         cart = [{
@@ -226,7 +228,7 @@ const addCartToMemory = () => {
 const addCartToHTML = () => {
     listCartHTML.innerHTML = '';
     let totalQuantity = 0;
-    
+    //console.log(cart.length);
     if(cart.length > 0){
         cart.forEach(item => {
             totalQuantity = totalQuantity +  item.quantity;
@@ -281,8 +283,7 @@ const changeQuantityCart = (product_id, type) => {
                 cart[positionItemInCart].quantity = cart[positionItemInCart].quantity + 1;
                 break;
         
-            default:
-                let changeQuantity = cart[positionItemInCart].quantity - 1;
+                
                 if (changeQuantity > 0) {
                     cart[positionItemInCart].quantity = changeQuantity;
                 }else{
@@ -295,24 +296,24 @@ const changeQuantityCart = (product_id, type) => {
     addCartToMemory();
 }
 
-const initApp2 = (s,e) => {
+const initApp2 = () => {
     // get data product
     fetch('../prodimage.json')
     .then(response => response.json())
     .then(data => {
         products = data;
-        addDatasToHTMl(s,e);
+        addDatasToHTMl();
 
     })
 }
-
-const initApp = (s,e) => {
+initApp2();
+const initApp = () => {
     // get data product
     fetch('../products.json')
     .then(response => response.json())
     .then(data => {
         products = data;
-        addDataToHTML(s,e);
+        addDataToHTML();
 
         // get data cart from memory
         if(localStorage.getItem('cart')){
@@ -321,17 +322,21 @@ const initApp = (s,e) => {
         }
     })
 }
-
+initApp();
 
 var srcs=[];
-const addDataToHTML = (s, e) => {
+const addDataToHTML = () => {
+        let s=getstart();
+        let e=getend();
         if(products.length > 0) 
         {
            for(let i=s;i<e ;i++){
             let itemdiv=`<div class="itemdiv">`;
             let product=products[i];
             let newProduct = document.createElement('div');
-            
+            //console.log(product.id);
+           // console.log(newProduct.dataset);
+
             newProduct.dataset.id = product.id;
             newProduct.classList.add('item');
             newProduct.setAttribute("id",`item${i}`);
@@ -371,7 +376,10 @@ const addDataToHTML = (s, e) => {
             };
         }
     }
-const  addDatasToHTMl = (s, e)=> {
+const  addDatasToHTMl = ()=> {
+    let s=getstart();
+    let e=getend();
+    console.log(products.length );
     if(products.length > 0) 
     {
         for(let i=s;i<e ;i++){
@@ -385,6 +393,7 @@ const  addDatasToHTMl = (s, e)=> {
             else if(product.lengths==3){
                 srcs[i]=[3,product.image1, product.image2, product.image];
             }
+            console.log(srcs[i]); 
         }
     }
 };
