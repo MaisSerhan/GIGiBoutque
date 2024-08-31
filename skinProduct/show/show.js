@@ -37,6 +37,7 @@ im.setAttribute("src",document.querySelector(`.container .listProduct div#${item
 im.setAttribute("loading","lazy");
 im.setAttribute("id",`img${id}`);
 im.setAttribute("onclick",`changeImg( ${itemss.id.substring(4)-1}, "item${itemss.id.substring(4)-1}")`);
+document.querySelector(`.container .listProduct div#${itemss.id} img`).setAttribute("onclick",`changeImg( ${itemss.id.substring(4)}, "item${itemss.id.substring(4)}")`);
 console.log(itemss.id.substring(4)==first)
 if(itemss.id.substring(4)==first){
     im.setAttribute("onclick",`changeImg( ${first+len-1}, "item${first+len-1}")`);
