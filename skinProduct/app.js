@@ -10,9 +10,7 @@ let asul=document.getElementById("aside__list");
 let products = [];
 let prodimage = [];
 let cart = [];
-var source="2"; 
 let s,e;
-
 const navbar= ()=>{
     let close=document.createElement("button");
     close.innerHTML="X";
@@ -194,29 +192,39 @@ closeCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
 })
 
+
 listProductHTML.addEventListener('click', (event) => {
     let positionClick = event.target;
     if(positionClick.classList.contains('addCart')){
         let id_product = positionClick.parentElement.dataset.id;
-        addToCart(id_product);
-    }
+        let dev = document.querySelector(`#browsers${id_product}`);
+        if (dev==null || dev==undefined){
+            addToCart(id_product , "");
+        }
+        else
+        addToCart(id_product , dev.className);}
+    
+        
+    
 })
 
-const addToCart = (product_id) => {
-   // console.log(product_id);
+const addToCart = (product_id ,value) => {
     let positionThisProductInCart = cart.findIndex((value) => value.product_id == product_id);
     if(cart.length <= 0){
         cart = [{
             product_id: product_id,
-            quantity: 1
+            quantity: 1,
+            values: ""
         }];
     }else if(positionThisProductInCart < 0){
         cart.push({
             product_id: product_id,
-            quantity: 1
+            quantity: 1,
+            values: ""
         });
     }else{
         cart[positionThisProductInCart].quantity = cart[positionThisProductInCart].quantity + 1;
+        cart[positionThisProductInCart].values = value;
     }
     addCartToHTML();
     addCartToMemory();
@@ -225,17 +233,19 @@ const addToCart = (product_id) => {
 const addCartToMemory = () => {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
+
+var valcolor=[];
+
 const addCartToHTML = () => {
     listCartHTML.innerHTML = '';
     let totalQuantity = 0;
-    //console.log(cart.length);
     if(cart.length > 0){
         cart.forEach(item => {
             totalQuantity = totalQuantity +  item.quantity;
             let newItem = document.createElement('div');
             newItem.classList.add('item');
+            newItem.id=`itemcard${item.product_id}`;
             newItem.dataset.id = item.product_id;
-           
             let positionProduct = products.findIndex((value) => value.id == item.product_id);
             let info = products[positionProduct];
             listCartHTML.appendChild(newItem);
@@ -256,6 +266,9 @@ const addCartToHTML = () => {
                         <span class="plus">+</span>
                     </div>
            `;
+           if(item.values!="" && item.values !=null && item.values!=undefined){ 
+            document.querySelector(`#itemcard${item.product_id} .name`).innerHTML=item.values;
+           }
         }
         else totalQuantity = totalQuantity -  item.quantity;
     })
@@ -265,6 +278,7 @@ const addCartToHTML = () => {
 
 listCartHTML.addEventListener('click', (event) => {
     let positionClick = event.target;
+    
     if(positionClick.classList.contains('minus') || positionClick.classList.contains('plus')){
         let product_id = positionClick.parentElement.parentElement.dataset.id;
         let type = 'minus';
@@ -275,7 +289,7 @@ listCartHTML.addEventListener('click', (event) => {
     }
 })
 const changeQuantityCart = (product_id, type) => {
-    let positionItemInCart = cart.findIndex((value) => value.product_id == product_id);
+    let positionItemInCart = cart.findIndex((value) => value.product_id == product_id);;
     if(positionItemInCart >= 0){
         let info = cart[positionItemInCart];
         switch (type) {
@@ -283,7 +297,8 @@ const changeQuantityCart = (product_id, type) => {
                 cart[positionItemInCart].quantity = cart[positionItemInCart].quantity + 1;
                 break;
         
-                
+            default:
+                let changeQuantity = cart[positionItemInCart].quantity - 1;
                 if (changeQuantity > 0) {
                     cart[positionItemInCart].quantity = changeQuantity;
                 }else{
@@ -296,17 +311,6 @@ const changeQuantityCart = (product_id, type) => {
     addCartToMemory();
 }
 
-const initApp2 = () => {
-    // get data product
-    fetch('../prodimage.json')
-    .then(response => response.json())
-    .then(data => {
-        products = data;
-        addDatasToHTMl();
-
-    })
-}
-initApp2();
 const initApp = () => {
     // get data product
     fetch('../products.json')
@@ -325,7 +329,8 @@ const initApp = () => {
 initApp();
 
 var srcs=[];
-const addDataToHTML = () => {
+var yes="";
+let addDataToHTML = () => {
         let s=getstart();
         let e=getend();
         if(products.length > 0) 
@@ -334,9 +339,6 @@ const addDataToHTML = () => {
             let itemdiv=`<div class="itemdiv">`;
             let product=products[i];
             let newProduct = document.createElement('div');
-            //console.log(product.id);
-           // console.log(newProduct.dataset);
-
             newProduct.dataset.id = product.id;
             newProduct.classList.add('item');
             newProduct.setAttribute("id",`item${i}`);
@@ -345,8 +347,8 @@ const addDataToHTML = () => {
             itemdiv+="\n</div>";
             
             newProduct.innerHTML = 
-            `<img src="${product.image}" loading="lazy" alt="" id="img${product.id}">
-             <h2>${product.name}</h2>
+            `<a><img src="${product.image}" loading="lazy" alt="" id="img${product.id}" onclick= clickimg(${i},${product.id},${product.first},${product.lengths})></a>
+             <h2 class="name">${product.name}</h2>
            
             <div class="price"><i class="fa-solid fa-shekel-sign fa-xs" style="color: #000000;"></i>${product.price}</div>
              ${itemdiv}
@@ -354,14 +356,32 @@ const addDataToHTML = () => {
            
             if(product.class2=="small"){
                 newProduct.innerHTML = 
-               `<img src="${product.image}" loading="lazy" alt="" id="img${product.id}" class="small">
-                <h2>${product.write}</h2>
-                <h2>${product.name}</h2>
+               `<a><img src="${product.image}" loading="lazy" alt="" id="img${product.id}" class="small"  onclick= clickimg(${i},${product.id},${product.first},${product.lengths})></a>
+                <h2 class="write">${product.write}</h2>
+                <h2 class="name">${product.name}</h2>
                
                 <div class="price"><i class="fa-solid fa-shekel-sign fa-xs" style="color: #000000;"></i>${product.price}</div>
                  ${itemdiv}
                 <button class="addCart">Add To Cart</button>`;
-    
+                newProduct.classList.add("write");
+            }
+            if(product.values!=undefined&&product.newval=="yes"){
+                 let val=`<div id="browsers${product.id}" class="${product.name}<br>" value="yes">`;
+                product.values.forEach(value => {
+                    val+= `<input type="checkbox" onclick=checkbox(${product.id},"${value}")  id="${product.id}${value}"/>
+                    <label for="${product.id}${value}" >${value}</label>`
+                                 
+                })
+                val+=`</div> `;
+                newProduct.innerHTML = 
+               `<a><img src="${product.image}" loading="lazy" alt="" id="img${product.id}" onclick= clickimg(${i},${product.id},${product.first},${product.lengths})></a>
+                <h2>${product.name}</h2>
+                <div class="price"><i class="fa-solid fa-shekel-sign fa-xs" style="color: #000000;"></i>${product.price}</div>
+                 ${val}
+                 ${itemdiv}
+                 
+                <button class="addCart" value="yes" >Add To Cart</button>`;
+                newProduct.setAttribute("value","yes");
             }
             newProduct.classList.add(product.class);
             if(product.class2=="hidden2"){
@@ -374,62 +394,55 @@ const addDataToHTML = () => {
             newProduct = document.querySelector(`.listProduct .item .colorhave${i}`);
             newProduct.setAttribute("onclick",`changeImg( ${i}, "item${i}")`);
             };
-        }
+       if(yes=="yes"){
+            addet();
+        } }
+        
     }
-const  addDatasToHTMl = ()=> {
-    let s=getstart();
-    let e=getend();
-    console.log(products.length );
-    if(products.length > 0) 
-    {
-        for(let i=s;i<e ;i++){
-            let product=products[i];
-            if(product.lengths==1){
-                srcs[i]=[1,product.image];
-            }
-            else if(product.lengths==2){
-                srcs[i]=[2,product.image1, product.image];
-            }
-            else if(product.lengths==3){
-                srcs[i]=[3,product.image1, product.image2, product.image];
-            }
-            console.log(srcs[i]); 
-        }
+
+
+function checkbox (product_id , product_value){
+    let dev = document.querySelector(`#browsers${product_id}`);
+    let id=dev.className; 
+    if(dev.className.includes(product_value)){
+        id=id.replace(product_value,'');
+     }
+     
+    else{ 
+        id=dev.className +"   "+ product_value;
     }
-};
-    
+    dev.setAttribute("class",`${id}`)
+   }
+
 function changeImg(i ,id){
-    let elem ="", elem1="",elem2="";
-    if(srcs[i][0]>=3){
-    elem =document.getElementById(srcs[i][3]);
-    }
-    if(srcs[i][0]>=2){
-    elem1 =document.getElementById(srcs[i][2]);
-    }
-    if(srcs[i][0]>=1){
-    elem2 =document.getElementById(srcs[i][1]); 
-    }
-    
-    for(let j=1;j<=srcs[i][0];j++){
-        if(!document.getElementById(srcs[i][j]).classList.contains("hidden")){
-            document.getElementById(srcs[i][j]).classList.add("hidden");
+     srcs=products[i].srcs;
+    for(let j=0;j<products[i].lengths;j++){
+       
+        if(!document.getElementById(srcs[j]).classList.contains("hidden")){
+            document.getElementById(srcs[j]).classList.add("hidden");
         }
     }
 
-    
-    if(id==srcs[i][3]&&srcs[i][0]>=1){
-        document.getElementById(srcs[i][1]).classList.toggle("hidden");
+    let len=products[i].lengths;
+    if(id==srcs[2]&&len>=1){
+        document.getElementById(srcs[0]).classList.toggle("hidden");
     }
-    else if(id==srcs[i][2]&&srcs[i][0]==2){
-        document.getElementById(srcs[i][1]).classList.toggle("hidden");
+    else if(id==srcs[0]&&len==2){
+        document.getElementById(srcs[1]).classList.toggle("hidden");
     }
-    else if(id==srcs[i][1]&&srcs[i][0]>=2){
-        document.getElementById(srcs[i][2]).classList.toggle("hidden");
+    else if(id==srcs[0]&&len>=2){
+        document.getElementById(srcs[1]).classList.toggle("hidden");
     }
-    else if(id==srcs[i][2]&&srcs[i][0]>=3){
-        document.getElementById(srcs[i][3]).classList.toggle("hidden");
+    else if(id==srcs[1]&&len>=3){
+        document.getElementById(srcs[2]).classList.toggle("hidden");
     }
     else{
-        document.getElementById(srcs[i][srcs[i][0]]).classList.toggle("hidden"); 
+        document.getElementById(srcs[len-1]).classList.toggle("hidden"); 
     }
 }
+
+
+const clickimg = (i,product_id,first,len) =>{
+    sessionStorage.setItem('array', JSON.stringify([i,product_id,first,len]));
+    window.location.href='../show/show.html';
+ }

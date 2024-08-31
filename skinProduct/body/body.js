@@ -1,10 +1,10 @@
 var srcs=[];
 
 function getstart(){
-    return 50;
+    return 550;
 }
 function getend(){
-    return 74;
+    return 574;
 }
 
 document.getElementById("section7").style.color="#b69292";
