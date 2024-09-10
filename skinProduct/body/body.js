@@ -7,5 +7,5 @@ function getend(){
     return 574;
 }
 
-document.getElementById("section7").style.color="#b69292";
-document.querySelector("aside #section7").style.color="#b69292";
+document.getElementById("section8").style.color="#b69292";
+document.querySelector("aside #section8").style.color="#b69292";

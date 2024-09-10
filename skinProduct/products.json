@@ -238,7 +238,7 @@
     "price": 130,
     "image": "../image/12.jpg",
     "color":"4 Piece",
-    "lenght":1,
+    "lengths":1,
     "class":"show",
     "first": 21
 },

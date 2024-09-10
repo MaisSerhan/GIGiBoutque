@@ -10,6 +10,7 @@ let asul=document.getElementById("aside__list");
 let products = [];
 let prodimage = [];
 let cart = [];
+var source="2"; 
 let s,e;
 const navbar= ()=>{
     let close=document.createElement("button");
@@ -18,7 +19,7 @@ const navbar= ()=>{
     ul.appendChild(close);
     close.classList.add("off");
     
-    for(let i=0;i<5;i++){
+    for(let i=0;i<6;i++){
         let n=`Section ${i}`;
         let c=`section${i}`;
         let a =`<a class="menu__link" id="${c}"  ></a>`;
@@ -33,7 +34,6 @@ const navbar= ()=>{
         s = document.querySelector(`aside .${c}`);
         s.innerHTML=a;
     };
-
     let a =document.querySelector("#section4");
     a.innerHTML = "الرئيسية";
     a.setAttribute("href","../../index.html");
@@ -43,7 +43,9 @@ const navbar= ()=>{
     a.innerHTML = "تعرف علينا ";  
     a =document.querySelector("#section1");
     a.innerHTML = "العروض "; 
-
+    a =document.querySelector("#section5");
+    a.innerHTML=`
+     <input type="search" id="search"  placeholder="search"/>`;
     a =document.querySelector("#aside__list #section4");
     a.innerHTML = "الرئيسية";
     a.setAttribute("href","../../index.html");
@@ -55,7 +57,12 @@ const navbar= ()=>{
     a.innerHTML = "العروض "; 
     a =document.querySelector("#aside__list #section0");
     a.innerHTML = "التواصل والاستفسار "; 
-     a.setAttribute("href" , "https://api.whatsapp.com/send?phone=972568515279" );
+    a.setAttribute("href" , "https://api.whatsapp.com/send?phone=972568515279" );
+    a =document.querySelector("#aside__list #section5");
+        a.innerHTML=`
+        <input type="search" id="search" placeholder="searchs"/>`;
+  
+    
     
   };
   
@@ -67,11 +74,61 @@ const navbar= ()=>{
     button.setAttribute("class","menu__link");
     button.setAttribute("id","minue");
     button.setAttribute("onclick", `show("#navbar__list")`);
-    button.innerHTML=`<img src="https://static.vecteezy.com/system/resources/previews/002/292/406/non_2x/hamburger-menu-line-icon-free-vector.jpg " width="40px" height="40px">`
+    button.innerHTML=`<i class="fa-solid fa-bars fa-2xl"></i>`
+    nav1.insertAdjacentElement("afterbegin",button);
+    button=document.createElement("button");
+    button.setAttribute("onclick", `show("#navbar__list")`);
+    button.setAttribute("id","minue2");
+    button.innerHTML=`<a><i class="fa-solid fa-magnifying-glass fa-xl" style="color: #000000;"></i><a>`;
     nav1.insertAdjacentElement("afterbegin",button);
 }
 
 minue();
+
+var user="";
+const searchInput = document.querySelector(`input[type="search"]`);
+const searchInput2 = document.querySelector(`aside input[type="search"]`);
+searchInput.addEventListener("input", (e) =>{
+    user="us";
+    let start=getstart();
+    let end=getend();
+    let  value = e.target.value.toLowerCase();
+    user = products.slice(start, end ).findIndex((values) =>( values.name.toLowerCase().includes(value) ));
+    let listSearch=document.querySelector(".listSearch");
+    if(user==""||user==null||user=="us"){
+        listSearch.innerHTML=``;
+    }
+    else{
+        listSearch.innerHTML=``; 
+        let elem;
+        for(let i=0;i<products[user].lengths;i++){
+            elem=document.querySelector(`#item${user+i+start}`);
+            const clone = elem.cloneNode(true);
+            listSearch.appendChild(clone);}
+    }  
+
+    })
+
+    searchInput2.addEventListener("input", (e) =>{
+        user="us";
+        let start=getstart();
+        let end=getend();
+        let  value = e.target.value.toLowerCase();
+        user = products.slice(start, end ).findIndex((values) =>( values.name.toLowerCase().includes(value) ));
+        let listSearch=document.querySelector(".listSearch");
+        if(user==""||user==null||user=="us"){
+            listSearch.innerHTML=``;
+        }
+        else{
+            listSearch.innerHTML=``; 
+            let elem;
+            for(let i=0;i<products[user].lengths;i++){
+                elem=document.querySelector(`#item${user+i+start}`);
+                const clone = elem.cloneNode(true);
+                listSearch.appendChild(clone);}
+        }  
+    
+        })
 
 let d=0;
 function show(str){
@@ -105,9 +162,9 @@ function show1(str){
   ul=document.getElementById("navbar__list2");
   asul=document.getElementById("aside__list2");
   const product= ()=>{
-      for(let i=0;i<9;i++){
-        let n=`Section ${i+5}`;
-        let c=`section${i+5}`;
+      for(let i=0;i<10;i++){
+        let n=`Section ${i+6}`;
+        let c=`section${i+6}`;
         let a =`<a class="menu__link" id="${c}"  ></a>`;
         let li=document.createElement("li");
         li.setAttribute('class',`nav__item ${c}`);
@@ -120,60 +177,60 @@ function show1(str){
         s = document.querySelector(`aside .${c}`);
         s.innerHTML=a;
       };
-        let a =document.querySelector("#aside__list2 #section13");
+        let a =document.querySelector("#aside__list2 #section14");
         a.innerHTML = "اكسسوارات";
         a.setAttribute("href","../accessories/acess.html");
-        a =document.querySelector("#aside__list2 #section12");
+        a =document.querySelector("#aside__list2 #section13");
         a.innerHTML = "عطور رجالية ";    
         a.setAttribute("href","../male/male.html");
-        a =document.querySelector("#aside__list2 #section11");
+        a =document.querySelector("#aside__list2 #section12");
         a.innerHTML = " عطور نسائية ";  
         a.setAttribute("href","../femal/femal.html");
-        a =document.querySelector("#aside__list2 #section10");
+        a =document.querySelector("#aside__list2 #section11");
         a.innerHTML = "منتجات الحامل ";
         a.setAttribute("href","../pregnant/pregnant.html");
-        a =document.querySelector("#aside__list2 #section9");
+        a =document.querySelector("#aside__list2 #section10");
         a.innerHTML = "منتجات الشعر "; 
         a.setAttribute("href","../heir/heir.html");
-        a =document.querySelector("#aside__list2 #section8");
+        a =document.querySelector("#aside__list2 #section9");
         a.innerHTML = "منتجات القدم واليدين "; 
         a.setAttribute("href","../leg/leg.html");
-        a =document.querySelector("#aside__list2 #section7");
+        a =document.querySelector("#aside__list2 #section8");
         a.innerHTML = "منتجات الجسم "; 
         a.setAttribute("href","../body/body.html");
-        a =document.querySelector("#aside__list2 #section6");
+        a =document.querySelector("#aside__list2 #section7");
         a.innerHTML = "منتجات البشرة ";
         a.setAttribute("href", "../skin/index2.html");
-        a =document.querySelector("#aside__list2 #section5");
+        a =document.querySelector("#aside__list2 #section6");
         a.innerHTML = " make up ";
         a.setAttribute("href","../makeup/makeup.html");
       
 
-      a =document.querySelector("#section13");
+      a =document.querySelector("#section14");
       a.innerHTML = "اكسسوارات";
       a.setAttribute("href","../accessories/acess.html");
-      a =document.querySelector("#section12");
+      a =document.querySelector("#section13");
       a.innerHTML = "عطور رجالية ";    
       a.setAttribute("href","../male/male.html");
-      a =document.querySelector("#section11");
+      a =document.querySelector("#section12");
       a.innerHTML = " عطور نسائية ";  
       a.setAttribute("href","../femal/femal.html");
-      a =document.querySelector("#section10");
+      a =document.querySelector("#section11");
       a.innerHTML = "منتجات الحامل "; 
       a.setAttribute("href","../pregnant/pregnant.html");
-      a =document.querySelector("#section9");
+      a =document.querySelector("#section10");
       a.innerHTML = "منتجات الشعر "; 
       a.setAttribute("href","../heir/heir.html");
-      a =document.querySelector("#section8");
+      a =document.querySelector("#section9");
       a.innerHTML = "منتجات القدم واليدين ";
       a.setAttribute("href","../leg/leg.html"); 
-      a =document.querySelector("#section7");
+      a =document.querySelector("#section8");
       a.innerHTML = "منتجات الجسم "; 
       a.setAttribute("href", "../body/body.html");
-      a =document.querySelector("#section6");
+      a =document.querySelector("#section7");
       a.innerHTML = "منتجات البشرة ";
       a.setAttribute("href", "../skin/index2.html");
-      a =document.querySelector("#section5");
+      a =document.querySelector("#section6");
       a.innerHTML = " make up ";
       a.setAttribute("href", "../makeup/makeup.html");
       
@@ -210,6 +267,7 @@ listProductHTML.addEventListener('click', (event) => {
 
 const addToCart = (product_id ,value) => {
     let positionThisProductInCart = cart.findIndex((value) => value.product_id == product_id);
+    let s=products.findIndex((value) => value.id == product_id);
     if(cart.length <= 0){
         cart = [{
             product_id: product_id,
@@ -225,6 +283,7 @@ const addToCart = (product_id ,value) => {
     }else{
         cart[positionThisProductInCart].quantity = cart[positionThisProductInCart].quantity + 1;
         cart[positionThisProductInCart].values = value;
+        
     }
     addCartToHTML();
     addCartToMemory();
@@ -330,9 +389,10 @@ initApp();
 
 var srcs=[];
 var yes="";
-let addDataToHTML = () => {
+const addDataToHTML = () => {
         let s=getstart();
         let e=getend();
+        
         if(products.length > 0) 
         {
            for(let i=s;i<e ;i++){
@@ -347,7 +407,7 @@ let addDataToHTML = () => {
             itemdiv+="\n</div>";
             
             newProduct.innerHTML = 
-            `<a><img src="${product.image}" loading="lazy" alt="" id="img${product.id}" onclick= clickimg(${i},${product.id},${product.first},${product.lengths})></a>
+           `<a><img src="${product.image}" loading="lazy" alt="" id="img${product.id}" onclick= clickimg(${i},${product.id},${product.first},${product.lengths})></a>
              <h2 class="name">${product.name}</h2>
            
             <div class="price"><i class="fa-solid fa-shekel-sign fa-xs" style="color: #000000;"></i>${product.price}</div>
@@ -356,7 +416,7 @@ let addDataToHTML = () => {
            
             if(product.class2=="small"){
                 newProduct.innerHTML = 
-               `<a><img src="${product.image}" loading="lazy" alt="" id="img${product.id}" class="small"  onclick= clickimg(${i},${product.id},${product.first},${product.lengths})></a>
+                `<a><img src="${product.image}" loading="lazy" alt="" id="img${product.id}" class="small"  onclick= clickimg(${i},${product.id},${product.first},${product.lengths})></a>
                 <h2 class="write">${product.write}</h2>
                 <h2 class="name">${product.name}</h2>
                
@@ -364,13 +424,14 @@ let addDataToHTML = () => {
                  ${itemdiv}
                 <button class="addCart">Add To Cart</button>`;
                 newProduct.classList.add("write");
+    
             }
             if(product.values!=undefined&&product.newval=="yes"){
-                 let val=`<div id="browsers${product.id}" class="${product.name}<br>" value="yes">`;
+                let val=`<div id="browsers${product.id}" class="${product.name}<br>" value="yes">`;
                 product.values.forEach(value => {
                     val+= `<input type="checkbox" onclick=checkbox(${product.id},"${value}")  id="${product.id}${value}"/>
                     <label for="${product.id}${value}" >${value}</label>`
-                                 
+                                     
                 })
                 val+=`</div> `;
                 newProduct.innerHTML = 
@@ -387,19 +448,15 @@ let addDataToHTML = () => {
             if(product.class2=="hidden2"){
                 newProduct.classList.add(product.class2);
             }
-
             listProductHTML.appendChild(newProduct);
-            let src=document.getElementById(`img${product.id}`).src;
-           
             newProduct = document.querySelector(`.listProduct .item .colorhave${i}`);
             newProduct.setAttribute("onclick",`changeImg( ${i}, "item${i}")`);
             };
-       if(yes=="yes"){
-            addet();
-        } }
-        
+            if(yes=="yes"){
+                addet();
+            }
+        }
     }
-
 
 function checkbox (product_id , product_value){
     let dev = document.querySelector(`#browsers${product_id}`);
@@ -413,7 +470,6 @@ function checkbox (product_id , product_value){
     }
     dev.setAttribute("class",`${id}`)
    }
-
 function changeImg(i ,id){
      srcs=products[i].srcs;
     for(let j=0;j<products[i].lengths;j++){
@@ -441,8 +497,8 @@ function changeImg(i ,id){
     }
 }
 
-
 const clickimg = (i,product_id,first,len) =>{
     sessionStorage.setItem('array', JSON.stringify([i,product_id,first,len]));
     window.location.href='../show/show.html';
  }
+

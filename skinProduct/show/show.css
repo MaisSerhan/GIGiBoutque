@@ -48,6 +48,21 @@
 h2.write{
     grid-area: 2 / 1 / 3 / 2;
 }
+.listProduct {
+    margin: 116px 5% 0 5%;
+}
+
+@media (max-width: 580px) {
+    .listProduct .item {
+        grid-template-rows: 49px 1fr 50px 50px 50px;
+    }
+    .listProduct .item button.addCart {
+        margin-left: 24px;
+    }
+    .listProduct .item a {
+        width: 17em;
+    }
+}
 @media (max-width: 400px) {
     .listProduct .item .imgs {
         margin: -29px 5px 0;
@@ -59,6 +74,7 @@ h2.write{
         width: 8em;
     }
     .listProduct .item {
+        width: 80%;
         grid-template-columns: 1fr 144px;
         grid-template-rows: 0 1fr 101px 33px 50px;
         margin-left: 10px;

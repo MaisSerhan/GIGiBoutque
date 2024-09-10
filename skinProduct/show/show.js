@@ -7,8 +7,11 @@ let i=pageArray[0];
 let id=pageArray[1];
 let first=pageArray[2];
 let len=pageArray[3];
-console.log(pageArray);
 yes="yes";
+
+let tit=document.querySelector("title");
+//console.log(document.querySelector(`#item${first} .name` ));
+
 function getstart(){
     return first;
 }
@@ -16,7 +19,6 @@ function getend(){
     return first+len;
 }
 
-console.log(`.colorhave${i}`);
 if(document.querySelector(`.colorhave${i}`)!=null)
 document.querySelector(`.colorhave${i}`).classList.add("hidden");
 
@@ -30,7 +32,6 @@ let bool="";
 hidd.forEach(items => {
 let news=document.createElement("div");
 news.setAttribute("class","imgs");    
-console.log(items);
 hidd.forEach(itemss => {
 let im=document.createElement("img");
 im.setAttribute("src",document.querySelector(`.container .listProduct div#${itemss.id} img`).src);
@@ -38,7 +39,6 @@ im.setAttribute("loading","lazy");
 im.setAttribute("id",`img${id}`);
 im.setAttribute("onclick",`changeImg( ${itemss.id.substring(4)-1}, "item${itemss.id.substring(4)-1}")`);
 document.querySelector(`.container .listProduct div#${itemss.id} img`).setAttribute("onclick",`changeImg( ${itemss.id.substring(4)}, "item${itemss.id.substring(4)}")`);
-console.log(itemss.id.substring(4)==first)
 if(itemss.id.substring(4)==first){
     im.setAttribute("onclick",`changeImg( ${first+len-1}, "item${first+len-1}")`);
 }
@@ -51,6 +51,5 @@ if(bool!="write")
 items.appendChild(news);
 });
 
-
-
+tit.innerText=document.querySelector(`#item${first} .name` ).innerText;
 }
