@@ -48,6 +48,7 @@ svg{
 aside{
     display: none;
     width: auto;
+    padding-top: 29px;
     background-color: #e7e1d3;
     color: #eee;
     position: fixed;
@@ -60,10 +61,12 @@ aside{
     grid-template-rows: 201px 1fr 47px;
     transition: .5s;
     z-index: 5;
+    padding-top: 29px;
     list-style-type: none;
 }
 
 body aside.aside{
+    padding-top: 3px;
     left: 0px;
 }
 body aside ul{
@@ -300,12 +303,13 @@ input[type="search"]{
 .page__header .connect{
     margin: 0px;
 }
-@media only screen and (max-width: 1145px) {
+@media(max-width: 1145px) {
     .container{
         margin-top: 261px;
     }
     #aside__list #section0{
         display: none;
+        margin-bottom: -20px;
     }
 }
 @media only screen and (max-width: 990px) {
@@ -405,6 +409,10 @@ height: auto;}
     
 }
 @media only screen and (max-width: 400px) {
+    body aside.aside {
+        padding-top: 29px;
+        left: 0px;
+    }
 
 .page__header .connect {
     display: none;
@@ -413,7 +421,7 @@ height: auto;}
     display: block;
 }
 aside {
-    grid-template-rows: 28% 62% 10%;
+    grid-template-rows: 31% 59% 6%;
 }
 
 }
