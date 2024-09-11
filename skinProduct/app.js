@@ -74,12 +74,12 @@ const navbar= ()=>{
     button.setAttribute("class","menu__link");
     button.setAttribute("id","minue");
     button.setAttribute("onclick", `show("#navbar__list")`);
-    button.innerHTML=`<i class="fa-solid fa-bars fa-2xl"></i>`
+    button.innerHTML=`<a><i class="fa-solid fa-magnifying-glass fa-xl" style="color: #000000;"></i><a>`;
     nav1.insertAdjacentElement("afterbegin",button);
     button=document.createElement("button");
     button.setAttribute("onclick", `show("#navbar__list")`);
     button.setAttribute("id","minue2");
-    button.innerHTML=`<a><i class="fa-solid fa-magnifying-glass fa-xl" style="color: #000000;"></i><a>`;
+    button.innerHTML=`<i class="fa-solid fa-bars fa-2xl"></i>`
     nav1.insertAdjacentElement("afterbegin",button);
 }
 
