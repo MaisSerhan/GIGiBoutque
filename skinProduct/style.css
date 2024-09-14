@@ -58,7 +58,7 @@ aside{
     padding: 5px;
     height: 99%;
     display: grid;
-    grid-template-rows: 201px 1fr 47px;
+    grid-template-rows: 211px 1fr 88px;
     transition: .5s;
     z-index: 5;
     padding-top: 29px;
@@ -66,8 +66,9 @@ aside{
 }
 
 body aside.aside{
-    padding-top: 3px;
+    padding-top: 14px;
     left: 0px;
+    grid-template-rows: 31% 59% 8%;
 }
 body aside ul{
     list-style-type: none;
@@ -303,6 +304,12 @@ input[type="search"]{
 .page__header .connect{
     margin: 0px;
 }
+#aside__list #section5 button{
+    border-radius: 7px;
+    background-color: #fce0e0;
+    color: black;
+}
+
 @media(max-width: 1145px) {
     .container{
         margin-top: 261px;
@@ -357,6 +364,10 @@ input[type="search"]{
         background-color: #fce0e0;
         grid-area: 3 / 1 / 4 / 2;
         color: black;
+        width: 93%;
+        margin-left: 2%;
+        height: 46px;
+        font-size: large;
     }
     .container{
         margin-top: 0;
@@ -374,7 +385,7 @@ input[type="search"]{
     }
     .listProduct{
         grid-template-columns: repeat(3, 1fr);
-        margin: 171px 5% 0 5%;
+        margin: 139px 5% 0 5%;
     }
 }
 .fa-solid, .fas {
@@ -395,6 +406,18 @@ height: auto;}
     .listSearch {
         grid-area: 1 / 1 / 2 / 3;
     }
+    input[type="search"]{
+        border-radius: 20px;
+        padding: 11px 37px 7px 16px;
+        width: 70%;
+    }
+    #aside__list #section5 button{
+        border-radius: 7px;
+        background-color: #fce0e0;
+        color: black;
+        padding: 6px 17px 5px 17px;
+        font-size: large;
+    }
     .listProduct{
         grid-template-columns: repeat(2, 1fr);
     }
@@ -407,14 +430,11 @@ height: auto;}
     .listProduct .item img {
         /* height: 50%; */
         }
-    
+    body aside.aside {
+        width: 100%;
+    }
 }
 @media only screen and (max-width: 400px) {
-    body aside.aside {
-        padding-top: 14px;
-        left: 0px;
-    }
-
 .page__header .connect {
     display: none;
 }
@@ -422,11 +442,19 @@ height: auto;}
     display: block;
 }
 aside {
-    grid-template-rows: 31% 61% 6%;
+    grid-template-rows: 31% 59% 8%;
+}
 }
 
+@media only screen and (max-width: 350px) {
+#aside__list #section5 button {
+    padding: 4px 10px 1px 10px;
 }
-
+input[type="search"] {
+    padding: 10px 16px 4px 18px;
+    width: 63%;
+}
+}
 .hi{
     margin-top:0px;
  }

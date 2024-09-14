@@ -60,8 +60,13 @@ const navbar= ()=>{
     a.setAttribute("href" , "https://api.whatsapp.com/send?phone=972568515279" );
     a =document.querySelector("#aside__list #section5");
         a.innerHTML=`
-        <input type="search" id="search" placeholder="searchs"/>`;
-  
+        <input type="search" id="search" placeholder="searchs"/>
+        <button onclick=show("#navbar__list")>ابحث</button>`;
+        /*let close2=document.createElement("button");
+        close2.setAttribute("onclick",`show("#navbar__list")`);
+        close2.innerHTML="X";
+        asul=document.querySelector("aside");
+        asul.appendChild(close2);*/
     
     
   };
