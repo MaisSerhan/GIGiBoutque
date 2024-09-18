@@ -9,6 +9,7 @@ const initApp = () => {
     .then(data => {
         products = data;
         localStorage.setItem('checkbox', JSON.stringify(data));
+        console.log(products,localStorage.getItem('checkbox'));
         section();
         });
 }
