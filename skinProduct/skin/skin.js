@@ -1,12 +1,32 @@
-
-
-document.getElementById("section7").style.color="#b69292";
-document.querySelector("aside #section7").style.color="#b69292"; 
 var srcs=[];
-
-function getstart(){
-    return 0;
+let sect=[];
+let products=[];
+const initApp = () => {
+    
+    localStorage.setItem('checkbox', JSON.stringify([]));
+    fetch('https://maisserhan.github.io/GigiBoutquessss/products.json')
+    .then(response => response.json())
+    .then(data => {
+        products = data;
+        localStorage.setItem('checkbox', JSON.stringify(data));
+        section();
+        });
 }
-function getend(){
-    return 0;
+initApp();
+
+function section(){
+   products.forEach(prod=>{
+    if(prod.section=="skin"){
+        sect.push(prod.count);
+    }
+  })
+  localStorage.setItem('sections',sect);
+  localStorage.setItem('colr',7);
+  localStorage.setItem('section',"skin");
+  addDataToHTML();
+  // get data cart from memory
+  if(localStorage.getItem('cart')){
+    cart = JSON.parse(localStorage.getItem('cart'));
+    addCartToHTML();
+  }
 }

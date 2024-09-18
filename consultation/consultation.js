@@ -19,7 +19,7 @@ const navbar= ()=>{
     };
     let a =document.querySelector("#section4");
     a.innerHTML = "الرئيسية";
-    a.setAttribute("href","../index.html");
+    a.setAttribute("href","../GigiApp.html");
     a =document.querySelector("#section3");
     a.innerHTML = `منتجاتنا `;  
     a.setAttribute("href","../skinProduct/makeup/makeup.html")

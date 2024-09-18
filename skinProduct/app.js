@@ -7,11 +7,16 @@ let closeCart = document.querySelector('.close');
 const nav=document.querySelector(".navbar__menu");
 let ul=document.getElementById("navbar__list");
 let asul=document.getElementById("aside__list");
-let products = [];
+//let products = [];
 let prodimage = [];
 let cart = [];
-var source="2"; 
-let s,e;
+var user="";
+var srcs=[];
+//var yes="";
+//let sect=[]
+
+
+
 const navbar= ()=>{
     let close=document.createElement("button");
     close.innerHTML="X";
@@ -62,15 +67,7 @@ const navbar= ()=>{
         a.innerHTML=`
         <input type="search" id="search" placeholder="searchs"/>
         <button onclick=show("#navbar__list")>ابحث</button>`;
-        /*let close2=document.createElement("button");
-        close2.setAttribute("onclick",`show("#navbar__list")`);
-        close2.innerHTML="X";
-        asul=document.querySelector("aside");
-        asul.appendChild(close2);*/
-    
-    
   };
-  
   navbar();
 
   const minue=()=>{
@@ -87,18 +84,14 @@ const navbar= ()=>{
     button.innerHTML=`<i class="fa-solid fa-bars fa-2xl"></i>`
     nav1.insertAdjacentElement("afterbegin",button);
 }
-
 minue();
-
-var user="";
 const searchInput = document.querySelector(`input[type="search"]`);
-const searchInput2 = document.querySelector(`aside input[type="search"]`);
+
+
 searchInput.addEventListener("input", (e) =>{
     user="us";
-    let start=getstart();
-    let end=getend();
     let  value = e.target.value.toLowerCase();
-    user = products.slice(start, end ).findIndex((values) =>( values.name.toLowerCase().includes(value) ));
+    user = products.findIndex((values) =>( value!= "" && values.name!=undefined && values.name.toLowerCase().includes(value) && values.section == localStorage.getItem("section")));
     let listSearch=document.querySelector(".listSearch");
     if(user==""||user==null||user=="us"){
         listSearch.innerHTML=``;
@@ -107,33 +100,31 @@ searchInput.addEventListener("input", (e) =>{
         listSearch.innerHTML=``; 
         let elem;
         for(let i=0;i<products[user].lengths;i++){
-            elem=document.querySelector(`#item${user+i+start}`);
+            elem=document.querySelector(`#item${user+i}`);
             const clone = elem.cloneNode(true);
             listSearch.appendChild(clone);}
     }  
+})
 
-    })
+const searchInput2 = document.querySelector(`aside input[type="search"]`);
 
-    searchInput2.addEventListener("input", (e) =>{
-        user="us";
-        let start=getstart();
-        let end=getend();
-        let  value = e.target.value.toLowerCase();
-        user = products.slice(start, end ).findIndex((values) =>( values.name.toLowerCase().includes(value) ));
-        let listSearch=document.querySelector(".listSearch");
-        if(user==""||user==null||user=="us"){
-            listSearch.innerHTML=``;
-        }
-        else{
-            listSearch.innerHTML=``; 
-            let elem;
-            for(let i=0;i<products[user].lengths;i++){
-                elem=document.querySelector(`#item${user+i+start}`);
-                const clone = elem.cloneNode(true);
-                listSearch.appendChild(clone);}
-        }  
-    
-        })
+searchInput2.addEventListener("input", (e) =>{
+    user="us";
+    let  value = e.target.value.toLowerCase();
+    user = products.findIndex((values) =>( value!= "" && values.name!=undefined && values.name.toLowerCase().includes(value) && values.section == localStorage.getItem("section")));
+    let listSearch=document.querySelector(".listSearch");
+    if(user==""||user==null||user=="us"){
+        listSearch.innerHTML=``;
+    }
+    else{
+        listSearch.innerHTML=``; 
+        let elem;
+        for(let i=0;i<products[user].lengths;i++){
+            elem=document.querySelector(`#item${user+i}`);
+            const clone = elem.cloneNode(true);
+            listSearch.appendChild(clone);}
+    }  
+})
 
 let d=0;
 function show(str){
@@ -205,7 +196,7 @@ function show1(str){
         a.setAttribute("href","../body/body.html");
         a =document.querySelector("#aside__list2 #section7");
         a.innerHTML = "منتجات البشرة ";
-        a.setAttribute("href", "../skin/index2.html");
+        a.setAttribute("href", "../skin/skin.html");
         a =document.querySelector("#aside__list2 #section6");
         a.innerHTML = " make up ";
         a.setAttribute("href","../makeup/makeup.html");
@@ -234,7 +225,7 @@ function show1(str){
       a.setAttribute("href", "../body/body.html");
       a =document.querySelector("#section7");
       a.innerHTML = "منتجات البشرة ";
-      a.setAttribute("href", "../skin/index2.html");
+      a.setAttribute("href", "../skin/skin.html");
       a =document.querySelector("#section6");
       a.innerHTML = " make up ";
       a.setAttribute("href", "../makeup/makeup.html");
@@ -262,28 +253,27 @@ listProductHTML.addEventListener('click', (event) => {
         let dev = document.querySelector(`#browsers${id_product}`);
         if (dev==null || dev==undefined){
             addToCart(id_product , "");
+
         }
-        else
-        addToCart(id_product , dev.className);}
-    
-        
-    
+        else{
+            addToCart(id_product , dev.className);
+        }
+    }
 })
 
 const addToCart = (product_id ,value) => {
     let positionThisProductInCart = cart.findIndex((value) => value.product_id == product_id);
-    let s=products.findIndex((value) => value.id == product_id);
     if(cart.length <= 0){
         cart = [{
             product_id: product_id,
             quantity: 1,
-            values: ""
+            values: value
         }];
     }else if(positionThisProductInCart < 0){
         cart.push({
             product_id: product_id,
             quantity: 1,
-            values: ""
+            values: value
         });
     }else{
         cart[positionThisProductInCart].quantity = cart[positionThisProductInCart].quantity + 1;
@@ -375,39 +365,24 @@ const changeQuantityCart = (product_id, type) => {
     addCartToMemory();
 }
 
-const initApp = () => {
-    // get data product
-    fetch('../products.json')
-    .then(response => response.json())
-    .then(data => {
-        products = data;
-        addDataToHTML();
-
-        // get data cart from memory
-        if(localStorage.getItem('cart')){
-            cart = JSON.parse(localStorage.getItem('cart'));
-            addCartToHTML();
-        }
-    })
-}
-initApp();
-
-var srcs=[];
-var yes="";
 const addDataToHTML = () => {
-        let s=getstart();
-        let e=getend();
-        
-        if(products.length > 0) 
-        {
-           for(let i=s;i<e ;i++){
+    let col=localStorage.getItem("colr");
+    if(col!=-1){
+    document.getElementById(`section${col}`).style.color="#b69292";
+    document.querySelector(`aside #section${col}`).style.color="#b69292"; 
+    }
+    let sect=[...(localStorage.getItem("sections").split(','))];
+    if(products.length > 0){
+        for(let j=0;j<sect.length;j+=1){
+          i=sect[j];
+          if(i!=null && i!=undefined && products[i]!=undefined){
             let itemdiv=`<div class="itemdiv">`;
             let product=products[i];
             let newProduct = document.createElement('div');
+            
             newProduct.dataset.id = product.id;
             newProduct.classList.add('item');
             newProduct.setAttribute("id",`item${i}`);
-            
             itemdiv= itemdiv + `\n<button class="colorhave${i}" >${product.color}</button>`;
             itemdiv+="\n</div>";
             
@@ -456,8 +431,8 @@ const addDataToHTML = () => {
             listProductHTML.appendChild(newProduct);
             newProduct = document.querySelector(`.listProduct .item .colorhave${i}`);
             newProduct.setAttribute("onclick",`changeImg( ${i}, "item${i}")`);
-            };
-            if(yes=="yes"){
+            }};
+            if(typeof yes !== 'undefined' && yes=="yes"){
                 addet();
             }
         }
@@ -468,42 +443,20 @@ function checkbox (product_id , product_value){
     let id=dev.className; 
     if(dev.className.includes(product_value)){
         id=id.replace(product_value,'');
-     }
-     
+    }
     else{ 
         id=dev.className +"   "+ product_value;
     }
     dev.setAttribute("class",`${id}`)
-   }
-function changeImg(i ,id){
-     srcs=products[i].srcs;
-    for(let j=0;j<products[i].lengths;j++){
-       
-        if(!document.getElementById(srcs[j]).classList.contains("hidden")){
-            document.getElementById(srcs[j]).classList.add("hidden");
-        }
-    }
+}
 
-    let len=products[i].lengths;
-    if(id==srcs[2]&&len>=1){
-        document.getElementById(srcs[0]).classList.toggle("hidden");
-    }
-    else if(id==srcs[0]&&len==2){
-        document.getElementById(srcs[1]).classList.toggle("hidden");
-    }
-    else if(id==srcs[0]&&len>=2){
-        document.getElementById(srcs[1]).classList.toggle("hidden");
-    }
-    else if(id==srcs[1]&&len>=3){
-        document.getElementById(srcs[2]).classList.toggle("hidden");
-    }
-    else{
-        document.getElementById(srcs[len-1]).classList.toggle("hidden"); 
-    }
+function changeImg(i ,id){
+    next = products[i].next;
+    document.getElementById(`${id}`).classList.toggle("hidden");
+    document.getElementById(`${next}`).classList.toggle("hidden");
 }
 
 const clickimg = (i,product_id,first,len) =>{
     sessionStorage.setItem('array', JSON.stringify([i,product_id,first,len]));
     window.location.href='../show/show.html';
  }
-

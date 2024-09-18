@@ -50,7 +50,6 @@ const minue=()=>{
 minue();  let d=0;
 function show(str){
     let mnue=document.querySelector(str);
-    console.log(mnue);console.log(d);
     if(d==0){
     mnue.style.display= "flex";
      d=1;}
@@ -63,12 +62,10 @@ function show(str){
   }
 
 let img= document.querySelector("#change");
-console.log(img.style.backgroundImage);
 let imges=['https://ik.imagekit.io/cywqg5brs/images2/image1.png?updatedAt=1724326203943','https://ik.imagekit.io/cywqg5brs/images2/image2.png?updatedAt=1724326227414'];
 
 let random=0;
 
-console.log(li1);
 setInterval(function(){
 img.style.backgroundImage = `url(${imges[random]})`;
 if(random==1){
@@ -80,7 +77,6 @@ if(random==0){
   li2.classList.add("active");
 
 }
-console.log(random);
 random++; 
 if(random >=2){
   random=0;
