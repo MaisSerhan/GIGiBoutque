@@ -24,6 +24,8 @@
 }
 .listProduct .item .itemdiv{
     grid-area:1/2/2/3;
+    top: -24px;
+    right: -3px;
 }
 .listProduct .item .imgs{
     grid-area:2/2/6/2;
@@ -51,7 +53,7 @@ h2.write{
 .listProduct {
     margin: 116px 5% 0 5%;
 }
-
+}
 @media (max-width: 580px) {
     .listProduct .item {
         grid-template-rows: 49px 1fr 50px 50px 50px;
