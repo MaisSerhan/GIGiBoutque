@@ -2,11 +2,13 @@ var srcs=[];
 let sect=[];
 let products=[];
 const initApp = () => {
-    localStorage.setItem('checkbox', JSON.stringify([]));
+    
+    localStorage.setItem('checkbox', JSON.stringify([]));console.log( localStorage.getItem('checkbox'));
     fetch('https://maisserhan.github.io/GigiBoutquessss/products.json')
     .then(response => response.json())
     .then(data => {
         products = data;
+        console.log(products);
         localStorage.setItem('checkbox', JSON.stringify(data));
         section();
         });
