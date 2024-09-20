@@ -145,7 +145,7 @@ width: 68%;
     color: #eee;
     border: none;
     padding: 5px 10px;
-    margin-top: 10px;
+    margin-top: 11px;
     border-radius: 20px;
     cursor: pointer;
 }
@@ -154,8 +154,6 @@ width: 68%;
     justify-content: center;
     flex-wrap: wrap;
     align-content: space-around;
-    top: -18px;
-    right: -3px;
     position: relative;
 }
 .listProduct .item .l{
