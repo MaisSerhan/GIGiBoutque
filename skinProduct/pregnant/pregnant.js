@@ -22,7 +22,7 @@ function section(){
   })
   localStorage.setItem('sections',sect);
   localStorage.setItem('colr',11);
-  localStorage.setItem('section',"male");
+  localStorage.setItem('section',"pregnant");
   addDataToHTML();
   // get data cart from memory
   if(localStorage.getItem('cart')){
