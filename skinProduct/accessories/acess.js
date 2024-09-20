@@ -22,7 +22,7 @@ function section(){
   })
   localStorage.setItem('sections',sect);
   localStorage.setItem('colr',14);
-  localStorage.setItem('section',"makeup");
+  localStorage.setItem('section',"access");
   addDataToHTML();
   // get data cart from memory
   if(localStorage.getItem('cart')){
