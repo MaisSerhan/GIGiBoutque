@@ -16,7 +16,7 @@ initApp();
 
 function section(){
    products.forEach(prod=>{
-    if(prod.section=="male"){
+    if(prod.section=="pregnant"){
         sect.push(prod.count);
     }
   })
