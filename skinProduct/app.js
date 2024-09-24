@@ -439,7 +439,9 @@ const addDataToHTML = () => {
     }
 
 function checkbox (product_id , product_value){
+    console.log(product_id , product_value)
     let dev = document.querySelector(`#browsers${product_id}`);
+     console.log(dev);
     let id=dev.className; 
     if(dev.className.includes(product_value)){
         id=id.replace(product_value,'');
