@@ -3,7 +3,7 @@ let products=[];
 const initApp = () => {
     
     localStorage.setItem('checkbox', JSON.stringify([]));
-    fetch('https://maisserhan.github.io/GigiBoutquessss/products.json')
+    fetch('https://boutiquegigi.github.io/GigiBoutquessss/products.json')
     .then(response => response.json())
     .then(data => {
         products = data;
