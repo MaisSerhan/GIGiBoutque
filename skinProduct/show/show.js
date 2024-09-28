@@ -79,7 +79,7 @@ function addet(){
     items.appendChild(news);
   })
   console.log(first,products[first].name);
-//  tit.innerText=document.querySelector(`#item${first}.name` ).innerText;
+  tit.innerText=products[first].name;
 }
 
 function showImag(i ,id){
