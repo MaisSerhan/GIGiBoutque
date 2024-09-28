@@ -78,8 +78,8 @@ function addet(){
     });
     items.appendChild(news);
   })
-  console.log(first, `#item${first}.name`);
-  tit.innerText=document.querySelector(`#item${first}.name` ).innerText;
+  console.log(first,products[first].name);
+//  tit.innerText=document.querySelector(`#item${first}.name` ).innerText;
 }
 
 function showImag(i ,id){
