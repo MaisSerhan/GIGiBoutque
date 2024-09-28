@@ -41,17 +41,6 @@ function section(){
 
 }
 
-
-/*console.log(products);
-/*products=localStorage.getItem("checkbox")
-products=JSON.parse(products);*
-if(products==[]||products==""){
-    fetch('https://maisserhan.github.io/GigiBoutquessss/products.json')
-    .then(response => response.json())
-    .then(data => {
-        products = data;
-    })
-}*/
 function getsec(){
     for(let i=first;i<first+len;i++){
         sect.push(i);
@@ -89,7 +78,8 @@ function addet(){
     });
     items.appendChild(news);
   })
-  tit.innerText=document.querySelector(`#item${first} .name` ).innerText;
+  console.log(first, `#item${first}.name`);
+  tit.innerText=document.querySelector(`#item${first}.name` ).innerText;
 }
 
 function showImag(i ,id){
